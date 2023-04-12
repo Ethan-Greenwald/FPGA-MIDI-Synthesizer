@@ -5,7 +5,7 @@ module sawtooth_wave_generator( input clk, reset, input [6:0] MIDI_freq, volume,
 	logic [23:0] counter;
 	logic [23:0] init;
 	logic [23:0] increment;
-	assign init = 50000000/`get_frequency(MIDI_freq); //period [clock cycles]
+	assign init = 2*50000000/`get_frequency(MIDI_freq); //period [clock cycles]
 	assign increment = 'd33554431/init;//(max-min)/period = ((2^24 - 1) + (2^24))/period
 	
 	/*

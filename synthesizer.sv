@@ -138,15 +138,56 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 	assign ARDUINO_IO[14] = i2c_sda_oe ? 1'b0 : 1'bz;
 	
 	
-//	//wire digital input to output
-//	assign ARDUINO_IO[2] = ARDUINO_IO[1];
-	logic [23:0] sq_wv_value;
+	/*ISSUE: Can't switch between notes :/
+	  can't left shift by negative values!!!!!!!!!!!!
+	  need to redo how frequency logic is done, maybe just use exponent instead of shifting? or better - LUT for frequencies! Add period [clock cycles] output to note_table
+	  Maybe just have python create stuff to copy + paste into Quartus instead of $readmemh?
+	*/
+	logic [23:0] sample, sq_wv_value, saw_wv_value, tri_wv_value, sine_wv_value;
 	logic [6:0] MIDI_freq, volume;
-	assign MIDI_freq = 69;
+	
+	
+	logic [22:0] MIDI_ROM [128];
+	initial $readmemh("MIDI_freq_to_period.hex", MIDI_ROM);
+	
+	always_ff @(negedge KEY[1]) begin
+		MIDI_freq = SW[9:3];
+	end
+	
+	logic [22:0] period;
+	assign period = MIDI_freq < 'd128 ? MIDI_ROM[MIDI_freq] : 0;
+	
 	assign volume = 20;
 	
-	sawtooth_wave_generator sq_wv( .clk(MAX10_CLK1_50), .reset(Reset_h), .MIDI_freq(MIDI_freq), .volume(volume), .value(sq_wv_value));
-	I2S_interface i2s( .LRCLK(ARDUINO_IO[4]), .SCLK(ARDUINO_IO[5]), .data_in(sq_wv_value), .SDATA(ARDUINO_IO[2]) );
+//	sawtooth_wave_generator saw_wv(  .clk(MAX10_CLK1_50), .reset(Reset_h), .MIDI_freq(MIDI_freq), .volume(volume), .value(saw_wv_value));
+	square_wave_generator 	sq_wv (  .clk(MAX10_CLK1_50), .reset(Reset_h), .period(period), .volume(volume), .value(sq_wv_value));
+//	triangle_wave_generator tri_wv(  .clk(MAX10_CLK1_50), .reset(Reset_h), .MIDI_freq(MIDI_freq), .volume(volume), .value(tri_wv_value));
+//	sine_wave_generator 		sine_wv( .clk(MAX10_CLK1_50), .reset(Reset_h), .MIDI_freq(MIDI_freq), .volume(volume), .value(sine_wv_value));
+	
+	
+	logic [3:0] note_name, octave, partial;
+	note_table notes(.MIDI_freq, .note_name, .octave, .partial);
+	
+	HexDriver hex_driver2 (note_name, HEX2[6:0]);
+	assign HEX2[7] = 1'b1;
+	
+	HexDriver hex_driver1 (partial, HEX1[6:0]);
+	assign HEX1[7] = 1'b1;
+	
+	HexDriver hex_driver0 (octave, HEX0[6:0]);
+	assign HEX0[7] = 1'b1;
+	
+	assign sample = sq_wv_value;
+//	always_comb begin
+//		case(SW[1:0])
+//			2'b00: 	sample = sq_wv_value;
+//			2'b01: 	sample = saw_wv_value;
+//			2'b10: 	sample = tri_wv_value;
+//			default:	sample = sq_wv_value;
+//		endcase
+//	end
+	
+	I2S_interface i2s( .LRCLK(ARDUINO_IO[4]), .SCLK(ARDUINO_IO[5]), .data_in(sample), .SDATA(ARDUINO_IO[2]) );
 	
 	synthesizer_soc (
 		.clk_clk                           (MAX10_CLK1_50),  //clk.clk
