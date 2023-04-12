@@ -1,0 +1,18 @@
+module square_wave_generator( input clk, reset, output value);
+
+	//clock frequency is 50 MHz
+	//Generating an A: 440 Hz
+	//50 MHz / 440 Hz = 113636 clock cycles / period
+	//therfore, need to switch output value every 56818 clock cycles
+	
+	logic [15:0] counter;
+	always_ff @(posedge clk) begin
+		if(reset) begin
+			counter <= 8'h0;
+			output <= 0;
+		end
+		else begin
+			if(counter == 
+		end
+	end
+endmodule
