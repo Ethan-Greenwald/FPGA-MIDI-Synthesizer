@@ -21,7 +21,7 @@ module square_wave_generator( input clk, reset, input [6:0] MIDI_freq, volume, o
 		//on reset, counter goes to max value and output set to 0
 		if(reset) begin
 			counter <= init;//'d56818;
-			value <= (24'b011111111111111111111111*volume)/127;//{1'b0, 23{1'b1}};
+			value <= (24'b100000000000000000000000*volume)/127;//{1'b0, 23{1'b1}};
 		end
 		else begin
 			if(counter == 0) begin	//reached end of 1/2 cycle --> flip output

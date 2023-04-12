@@ -142,10 +142,10 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 //	assign ARDUINO_IO[2] = ARDUINO_IO[1];
 	logic [23:0] sq_wv_value;
 	logic [6:0] MIDI_freq, volume;
-	assign MIDI_freq = 56;
+	assign MIDI_freq = 69;
 	assign volume = 20;
 	
-	square_wave_generator sq_wv( .clk(MAX10_CLK1_50), .reset(Reset_h), .MIDI_freq(MIDI_freq), .volume(volume), .value(sq_wv_value));
+	sawtooth_wave_generator sq_wv( .clk(MAX10_CLK1_50), .reset(Reset_h), .MIDI_freq(MIDI_freq), .volume(volume), .value(sq_wv_value));
 	I2S_interface i2s( .LRCLK(ARDUINO_IO[4]), .SCLK(ARDUINO_IO[5]), .data_in(sq_wv_value), .SDATA(ARDUINO_IO[2]) );
 	
 	synthesizer_soc (
