@@ -1,13 +1,11 @@
-`define get_frequency(freq) \
-		440 * (1'b1 << ((freq - 69)/12))
-module triangle_wave_generator( input clk, reset, input [6:0] MIDI_freq, volume, output[23:0] value);
+module triangle_wave_generator( input clk, reset, input [22:0] period, input [6:0] volume, output[23:0] value);
 	
 	logic [23:0] counter;
 	logic [23:0] init;
 	logic [23:0] increment;
 	logic updown; //1 -> up; 0 -> down;
 	
-	assign init = 25000000/`get_frequency(MIDI_freq); 	//period/2 [clock cycles]
+	assign init = period/2; 	//period/2 [clock cycles]
 	assign increment = 'd33554431/init;						//(max-min)/(period/2) = ((2^24 - 1) + (2^24))/init
 
 	

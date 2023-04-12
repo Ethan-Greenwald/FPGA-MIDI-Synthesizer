@@ -1,5 +1,5 @@
 import numpy as np
-f = open("MIDI_freq_to_period.hex", "w")
+f = open("MIDI_freq_to_period.txt", "w")
 
 for n in range(128):
     freq = 2**((n-69)/12.0)*440

@@ -1,12 +1,9 @@
 import numpy as np
-f = open("quarter_sin.hex", "w")
+f = open("quarter_sin.mif", "w")
+f.write("WIDTH=24;\nDEPTH=16384;\nADDRESS_RADIX=HEX;\nDATA_RADIX=HEX;\nCONTENT BEGIN\n")
 for phase_idx in range(11025):
-    if(phase_idx % 8 == 0): #add hex address at each line (after 8 entries)
-        addr_str = f'{phase_idx:0>5X}' #f'{addr:05}'
-        f.write("\n@" + addr_str)
-        
     float_phase = float(phase_idx)/11025
     value = int(np.sin(float_phase*np.pi/2)*(2**23) )
     value_str = f'{value:0>6X}'
-    f.write(" " + value_str)
+    f.write(f'{phase_idx:0>4X}' + " : " + value_str + ";\n")
 f.close();
