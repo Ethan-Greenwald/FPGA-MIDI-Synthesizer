@@ -144,7 +144,17 @@ ELF := synthesizer.elf
 # Paths to C, C++, and assembly source files.
 C_SRCS += sgtl5000/sgtl5000.c
 C_SRCS += sgtl5000_test.c
-CXX_SRCS :=
+CXX_SRCS += include/Port.cpp
+CXX_SRCS += include/SPI.cpp
+CXX_SRCS += include/Usb.cpp
+CXX_SRCS += include/XBOXONE.cpp
+CXX_SRCS += include/hidboot.cpp
+CXX_SRCS += include/message.cpp
+CXX_SRCS += include/parsetools.cpp
+CXX_SRCS += include/usbh_midi.cpp
+CXX_SRCS += include/usbhid.cpp
+CXX_SRCS += include/usbhost.cpp
+CXX_SRCS += main.cpp
 ASM_SRCS :=
 
 

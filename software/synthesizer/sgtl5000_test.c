@@ -15,7 +15,7 @@
 #include "sys/alt_irq.h"
 #include "sgtl5000/GenericTypeDefs.h"
 #include "sgtl5000/sgtl5000.h"
-
+#include "sgtl5000_test.h"
 
 void setLED(int LED)
 {
@@ -93,7 +93,7 @@ void printSignedHex1(signed char value)
 }
 
 
-int main()
+int initialize_sgtl5000()
 {
 	ALT_AVALON_I2C_DEV_t *i2c_dev; //pointer to instance structure
 	//get a pointer to the Avalon i2c instance

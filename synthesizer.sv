@@ -124,43 +124,20 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 	
 	/* ############################ Wave Generation etc. ############################ */
 	
-	logic [23:0] sample, sq_wv_value, saw_wv_value, tri_wv_value, sine_wv_value;
-	logic [6:0] MIDI_freq, volume;
+	logic [23:0] sample_0, sample_1, sample_2, sample_3, output_sample;	//connections for generating and mixing samples
+	logic [15:0] note_vol_0, note_vol_1, note_vol_2, note_vol_3;			//connection to NIOS-II
+		
 	
-	// Initialize ROM for converting MIDI frequencies to period (in clock cycles)
-	logic [22:0] MIDI_ROM [128];
-	initial $readmemh("MIDI_freq_to_period.txt", MIDI_ROM);
+	waveform_generator note0( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_0), .sample(sample_0));
+	waveform_generator note1( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_1), .sample(sample_1));
+	waveform_generator note2( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_2), .sample(sample_2));
+	waveform_generator note3( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_3), .sample(sample_3));
 	
-	always_ff @(negedge KEY[1]) begin	//allow using switches + bottom button to change notes
-		MIDI_freq = SW[9:3];
-	end
-	
-	logic [22:0] period;
-	assign period = MIDI_ROM[MIDI_freq];
-	
-	assign volume = 20;
-	
-	sawtooth_wave_generator saw_wv(  .clk(MAX10_CLK1_50), .reset(Reset_h), .period(period), .volume(volume), .value(saw_wv_value));
-	square_wave_generator 	sq_wv (  .clk(MAX10_CLK1_50), .reset(Reset_h), .period(period), .volume(volume), .value(sq_wv_value));
-	triangle_wave_generator tri_wv(  .clk(MAX10_CLK1_50), .reset(Reset_h), .period(period), .volume(volume), .value(tri_wv_value));	//sawtooth octave is wrong, square doesn't reset
-	sine_wave_generator 		sine_wv( .clk(MAX10_CLK1_50), .reset(Reset_h), .period(period), .volume(volume), .value(sine_wv_value));	//sine is octave too high and +-30c
-	
-	/*  Waveform Select */
-	always_comb begin
-		case(SW[1:0])
-			2'b00: 	sample = sq_wv_value;
-			2'b01: 	sample = saw_wv_value;
-			2'b10: 	sample = tri_wv_value;
-			2'b11:	sample = sine_wv_value;
-			default:	sample = sq_wv_value;
-		endcase
-	end
-	
-	I2S_interface i2s( .LRCLK(ARDUINO_IO[4]), .SCLK(ARDUINO_IO[5]), .data_in(sample), .SDATA(ARDUINO_IO[2]) );
+	mixer mix(.clk(MAX10_CLK1_50), .master_vol(50), .sample_0(sample_0), .sample_1(sample_1), .sample_2(sample_2), .sample_3(sample_3), .mixed_sample(output_sample));
 	
 	/* Display note on hex displays */
 	logic [3:0] note_name, octave, partial;
-	note_table notes(.MIDI_freq, .note_name, .octave, .partial);
+	note_table notes(.MIDI_freq(note_vol_0[14:8]), .note_name, .octave, .partial);
 	
 	HexDriver hex_driver2 (note_name, HEX2[6:0]);
 	assign HEX2[7] = 1'b1;
@@ -169,8 +146,10 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 	assign HEX1[7] = 1'b1;
 	
 	HexDriver hex_driver0 (octave, HEX0[6:0]);
-	assign HEX0[7] = 1'b1;
+	assign HEX0[7] = 1'b1;	
+
 	
+	I2S_interface i2s( .LRCLK(ARDUINO_IO[4]), .SCLK(ARDUINO_IO[5]), .data_in(output_sample), .SDATA(ARDUINO_IO[2]) );
 	
 	synthesizer_soc (
 		.clk_clk                           (MAX10_CLK1_50),  //clk.clk
@@ -185,6 +164,12 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 		.i2c0_scl_in(i2c_scl_in),                    //i2c0.scl_in
 		.i2c0_sda_oe(i2c_sda_oe),                    //i2c0.sda_oe
 		.i2c0_scl_oe(i2c_scl_oe),                    //i2c0.scl_oe
+		
+		//MIDI
+		.note_vol_0_export(note_vol_0),
+		.note_vol_1_export(note_vol_1),
+		.note_vol_2_export(note_vol_2),
+		.note_vol_3_export(note_vol_3),
 		
 		//SDRAM
 		.sdram_clk_clk(DRAM_CLK),                            //clk_sdram.clk

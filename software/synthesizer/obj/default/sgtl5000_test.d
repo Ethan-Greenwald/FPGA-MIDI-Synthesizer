@@ -16,7 +16,7 @@ obj/default/sgtl5000_test.o: sgtl5000_test.c ../synthesizer_bsp/system.h \
  ../synthesizer_bsp//drivers/inc/altera_avalon_i2c_regs.h \
  ../synthesizer_bsp//HAL/inc/sys/alt_irq.h \
  ../synthesizer_bsp//HAL/inc/nios2.h sgtl5000/GenericTypeDefs.h \
- sgtl5000/sgtl5000.h sgtl5000/GenericTypeDefs.h
+ sgtl5000/sgtl5000.h sgtl5000/GenericTypeDefs.h sgtl5000_test.h
 
 ../synthesizer_bsp/system.h:
 
@@ -61,3 +61,5 @@ sgtl5000/GenericTypeDefs.h:
 sgtl5000/sgtl5000.h:
 
 sgtl5000/GenericTypeDefs.h:
+
+sgtl5000_test.h:

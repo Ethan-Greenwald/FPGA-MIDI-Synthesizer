@@ -3,7 +3,7 @@ module sawtooth_wave_generator( input clk, reset, input [22:0] period, input [6:
 	logic [23:0] increment;
 	
 	//2*period -> octave too low. period -> octave too high
-	assign increment = 'd33554431/period;//(max-min)/period = ((2^24 - 1) + (2^24))/period
+	assign increment = 'd33554431/(2*period);//(max-min)/period = ((2^24 - 1) + (2^24))/period
 
 	
 	logic [23:0] local_val;
