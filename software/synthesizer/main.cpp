@@ -51,17 +51,24 @@ int main() {
 	delay(200);
 
 	/* Pointers to PIOs */
-	volatile unsigned int *note_vol_0 = (unsigned int*)0x08001200;
-	volatile unsigned int *note_vol_1 = (unsigned int*)0x080011f0;
-	volatile unsigned int *note_vol_2 = (unsigned int*)0x080011e0;
-	volatile unsigned int *note_vol_3 = (unsigned int*)0x080011d0;
+	int NUM_NOTES = 4;
+//	volatile unsigned int *note_vol_0 = (unsigned int*)0x08001200;
+//	volatile unsigned int *note_vol_1 = (unsigned int*)0x080011f0;
+//	volatile unsigned int *note_vol_2 = (unsigned int*)0x080011e0;
+//	volatile unsigned int *note_vol_3 = (unsigned int*)0x080011d0;
 
+	volatile unsigned int* note_vol_array[NUM_NOTES] = {(unsigned int*)0x08001200, (unsigned int*)0x080011f0, (unsigned int*)0x080011e0, (unsigned int*)0x080011d0};
 	/* Initialize all notes/volumes to 0 */
-	*note_vol_0 = (unsigned int) 0x3C20;	//C4
-	*note_vol_1 = (unsigned int) 0x4020;	//E4
-	*note_vol_2 = (unsigned int) 0x4320;	//G4
-	*note_vol_3 = (unsigned int) 0;
+//	*note_vol_0 = (unsigned int) 0x3C20;	//C4
+//	*note_vol_1 = (unsigned int) 0x4020;	//E4
+//	*note_vol_2 = (unsigned int) 0x4320;	//G4
+//	*note_vol_3 = (unsigned int) 0;
+	for(int i = 0; i < NUM_NOTES; i++)
+			*(note_vol_array[i]) = 0;
 
+	int available_idx;
+	bool note_used[NUM_NOTES] = {false};
+	bool first_note = true;
 	while(1){
 		Usb.Task();
 		if(Midi){
@@ -70,12 +77,46 @@ int main() {
 
 			do {
 				if ( (size = Midi.RecvData(MIDI_packet)) > 0 ) {
-					printf("........\n");
-					toBinary(MIDI_packet[0]); printf("\n");
-					toBinary(MIDI_packet[1]); printf("\n");
-					toBinary(MIDI_packet[2]); printf("\n");
-					//TODO: Logic for assigning note_vols based on incoming data
-					//Also add PIOs for wheels, knobs, and buttons. Drum pads can be added later
+					/*
+										MIDI Status Codes:
+										Note On -  1001 CCCC
+										Note Off - 1000 CCCC
+										*/
+					//					printf("..........\n");
+					//					toBinary(MIDI_packet[0]); printf("\n");
+					//					toBinary(MIDI_packet[1]); printf("\n");
+					//					toBinary(MIDI_packet[2]); printf("\n");
+
+										switch(unsigned(MIDI_packet[0] >> 4)){
+										case 9:
+											if(first_note){
+												first_note = false;
+												break;
+											}
+											/* Find first available note_vol */
+											available_idx = -1;
+											for(int i = 0; i < NUM_NOTES; i++){
+												if(!note_used[i]){
+													available_idx = i;
+													note_used[i] = true;
+													break;
+												}
+											}
+											/* If a note_vol is available, write to it*/
+											if(available_idx != -1)
+												*(note_vol_array[available_idx]) = (MIDI_packet[1] << 8) + MIDI_packet[2];
+											break;
+
+										case 8:
+											for(int i = 0; i < NUM_NOTES; i++){    //iterate over all note_vols
+												if((*(note_vol_array[i]) >> 8) == unsigned(MIDI_packet[1])){  //we've found the note to turn off
+													*(note_vol_array[i]) = 0;                  //note turned off
+													note_used[i] = false;
+													break;
+												}
+											}
+											break;
+										}
 				}
 			} while (size > 0);
 		}
