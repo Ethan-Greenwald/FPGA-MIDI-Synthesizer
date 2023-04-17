@@ -252,6 +252,17 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_LITE_Defa
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE10_LITE_Default -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity DE10_LITE_Default -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Default -section_id Top
+set_global_assignment -name QIP_FILE sin_rom.qip
+set_global_assignment -name QIP_FILE rom.qip
+set_global_assignment -name QIP_FILE full_sin_rom.qip
+set_global_assignment -name SYSTEMVERILOG_FILE waveform_generator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE triangle_wave_generator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sine_wave_generator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sawtooth_wave_generator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE note_table.sv
+set_global_assignment -name SYSTEMVERILOG_FILE mixer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE MIDI_rom.sv
+set_global_assignment -name SYSTEMVERILOG_FILE lab62.sv
 set_global_assignment -name SYSTEMVERILOG_FILE HexDriver.sv
 set_global_assignment -name QIP_FILE synthesizer_soc/synthesis/synthesizer_soc.qip
 set_global_assignment -name SYSTEMVERILOG_FILE square_wave_generator.sv

@@ -162,13 +162,4 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 		
 	 );
 
-
-//instantiate a vga_controller, ball, and color_mapper here with the ports.
-vga_controller vga(.Clk(MAX10_CLK1_50), .Reset(Reset_h), .hs(VGA_HS), .vs(VGA_VS), .pixel_clk(VGA_Clk), .blank, .sync, .DrawX(drawxsig), .DrawY(drawysig));
-
-ball da_ball(.Reset(Reset_h), .frame_clk(VGA_VS), .keycode(keycode), .BallX(ballxsig), .BallY(ballysig), .BallS(ballsizesig));
-
-color_mapper color_boy(.BallX(ballxsig), .BallY(ballysig), .DrawX(drawxsig), .DrawY(drawysig), .Ball_size(ballsizesig), .Red, .Green, .Blue);
-
-
 endmodule

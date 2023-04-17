@@ -1,0 +1,18 @@
+Fitter Status : Successful - Mon Apr 17 08:53:05 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : synthesizer
+Top-level Entity Name : synthesizer
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 18,550 / 49,760 ( 37 % )
+    Total combinational functions : 17,825 / 49,760 ( 36 % )
+    Dedicated logic registers : 3,206 / 49,760 ( 6 % )
+Total registers : 3275
+Total pins : 141 / 360 ( 39 % )
+Total virtual pins : 0
+Total memory bits : 11,464 / 1,677,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 39 / 288 ( 14 % )
+Total PLLs : 1 / 4 ( 25 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0 / 2 ( 0 % )

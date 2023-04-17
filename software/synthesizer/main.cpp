@@ -78,45 +78,45 @@ int main() {
 			do {
 				if ( (size = Midi.RecvData(MIDI_packet)) > 0 ) {
 					/*
-										MIDI Status Codes:
-										Note On -  1001 CCCC
-										Note Off - 1000 CCCC
-										*/
-					//					printf("..........\n");
-					//					toBinary(MIDI_packet[0]); printf("\n");
-					//					toBinary(MIDI_packet[1]); printf("\n");
-					//					toBinary(MIDI_packet[2]); printf("\n");
+					MIDI Status Codes:
+					Note On -  1001 CCCC
+					Note Off - 1000 CCCC
+					*/
+//					printf("..........\n");
+//					toBinary(MIDI_packet[0]); printf("\n");
+//					toBinary(MIDI_packet[1]); printf("\n");
+//					toBinary(MIDI_packet[2]); printf("\n");
 
-										switch(unsigned(MIDI_packet[0] >> 4)){
-										case 9:
-											if(first_note){
-												first_note = false;
-												break;
-											}
-											/* Find first available note_vol */
-											available_idx = -1;
-											for(int i = 0; i < NUM_NOTES; i++){
-												if(!note_used[i]){
-													available_idx = i;
-													note_used[i] = true;
-													break;
-												}
-											}
-											/* If a note_vol is available, write to it*/
-											if(available_idx != -1)
-												*(note_vol_array[available_idx]) = (MIDI_packet[1] << 8) + MIDI_packet[2];
-											break;
+					switch(unsigned(MIDI_packet[0] >> 4)){
+					case 9:						//Note ON
+						if(first_note){			//handles an initial data packet that gets interpreted as note on event
+							first_note = false;
+							break;
+						}
+						/* Find first available note_vol */
+						available_idx = -1;
+						for(int i = 0; i < NUM_NOTES; i++){
+							if(!note_used[i]){
+								available_idx = i;
+								note_used[i] = true;
+								break;
+							}
+						}
+						/* If a note_vol is available, write to it*/
+						if(available_idx != -1)
+							*(note_vol_array[available_idx]) = (MIDI_packet[1] << 8) + MIDI_packet[2];
+						break;
 
-										case 8:
-											for(int i = 0; i < NUM_NOTES; i++){    //iterate over all note_vols
-												if((*(note_vol_array[i]) >> 8) == unsigned(MIDI_packet[1])){  //we've found the note to turn off
-													*(note_vol_array[i]) = 0;                  //note turned off
-													note_used[i] = false;
-													break;
-												}
-											}
-											break;
-										}
+					case 8:		//Note OFF
+						for(int i = 0; i < NUM_NOTES; i++){    								//iterate over all note_vols
+							if((*(note_vol_array[i]) >> 8) == unsigned(MIDI_packet[1])){  	//we've found the note to turn off
+								*(note_vol_array[i]) = 0;                  					//note turned off
+								note_used[i] = false;										//reset flag
+								break;
+							}
+						}
+						break;
+					}
 				}
 			} while (size > 0);
 		}

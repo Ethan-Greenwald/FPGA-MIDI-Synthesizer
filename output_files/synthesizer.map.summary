@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sat Apr 15 16:16:54 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : synthesizer
+Top-level Entity Name : synthesizer
+Family : MAX 10
+Total logic elements : 18,860
+    Total combinational functions : 17,732
+    Dedicated logic registers : 3,249
+Total registers : 3249
+Total pins : 141
+Total virtual pins : 0
+Total memory bits : 11,464
+Embedded Multiplier 9-bit elements : 39
+Total PLLs : 1
+UFM blocks : 0
+ADC blocks : 0
