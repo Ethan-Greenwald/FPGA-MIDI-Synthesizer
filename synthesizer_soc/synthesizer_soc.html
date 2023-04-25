@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2023.04.15.15:13:44</td>
+    <td class="l">2023.04.24.20:38:48</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -91,6 +91,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </a> Nios II 18.1
      <br/>All Components
      <br/>&#160;&#160;
+     <a href="#module_double_clk"><b>double_clk</b>
+     </a> altpll 18.1
+     <br/>&#160;&#160;
      <a href="#module_hex_digits_pio"><b>hex_digits_pio</b>
      </a> altera_avalon_pio 18.1
      <br/>&#160;&#160;
@@ -107,6 +110,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </a> altera_avalon_pio 18.1
      <br/>&#160;&#160;
      <a href="#module_leds_pio"><b>leds_pio</b>
+     </a> altera_avalon_pio 18.1
+     <br/>&#160;&#160;
+     <a href="#module_master_vol"><b>master_vol</b>
      </a> altera_avalon_pio 18.1
      <br/>&#160;&#160;
      <a href="#module_nios2_gen2_0"><b>nios2_gen2_0</b>
@@ -126,6 +132,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <br/>&#160;&#160;
      <a href="#module_onchip_memory2_0"><b>onchip_memory2_0</b>
      </a> altera_avalon_onchip_memory2 18.1
+     <br/>&#160;&#160;
+     <a href="#module_reverb"><b>reverb</b>
+     </a> altera_avalon_pio 18.1
      <br/>&#160;&#160;
      <a href="#module_sdram"><b>sdram</b>
      </a> altera_avalon_new_sdram_controller 18.1
@@ -149,6 +158,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </a> altera_avalon_pio 18.1
      <br/>&#160;&#160;
      <a href="#module_usb_rst"><b>usb_rst</b>
+     </a> altera_avalon_pio 18.1
+     <br/>&#160;&#160;
+     <a href="#module_vibrato"><b>vibrato</b>
      </a> altera_avalon_pio 18.1</span>
    </div>
   </div>
@@ -168,6 +180,19 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slavemodule">&#160;
+     <a href="#module_double_clk"><b>double_clk</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">pll_slave&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
      <a href="#module_hex_digits_pio"><b>hex_digits_pio</b>
      </a>
     </td>
@@ -176,8 +201,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001230</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001230</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012b0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012b0</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -202,8 +227,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">avalon_jtag_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>080012b8</td>
-    <td class="addr"><span style="color:#989898">0x</span>080012b8</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001338</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001338</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -215,8 +240,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001210</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001210</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001290</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001290</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -228,8 +253,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001270</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001270</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012f0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012f0</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -241,8 +266,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001220</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001220</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012a0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012a0</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_master_vol"><b>master_vol</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s1&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001280</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001280</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -319,8 +357,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001280</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001280</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001300</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001300</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_reverb"><b>reverb</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s1&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001260</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001260</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -345,8 +396,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">pll_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001290</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001290</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001310</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001310</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -371,8 +422,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">control_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>080012b0</td>
-    <td class="addr"><span style="color:#989898">0x</span>080012b0</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001330</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001330</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -397,8 +448,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001250</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001250</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012d0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012d0</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -410,8 +461,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001260</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001260</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012e0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012e0</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -423,8 +474,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001240</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001240</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012c0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012c0</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_vibrato"><b>vibrato</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s1&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001270</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001270</td>
    </tr>
   </table>
   <a name="module_clk_0"> </a>
@@ -474,6 +538,1090 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_double_clk"> </a>
+  <div>
+   <hr/>
+   <h2>double_clk</h2>altpll v18.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="76">double_clk</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;pll_slave</td>
+     </tr>
+     <tr>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;pll_slave</td>
+     </tr>
+     <tr>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;inclk_interface_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;inclk_interface</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;inclk_interface_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_reverb">reverb</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_vibrato">vibrato</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_master_vol">master_vol</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_note_vol_3">note_vol_3</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_note_vol_2">note_vol_2</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_note_vol_1">note_vol_1</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_note_vol_0">note_vol_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_spi_0">spi_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_timer_0">timer_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_key">key</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_leds_pio">leds_pio</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_hex_digits_pio">hex_digits_pio</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_usb_rst">usb_rst</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_usb_irq">usb_irq</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_usb_gpx">usb_gpx</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_jtag_uart_0">jtag_uart_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_keycode">keycode</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_sysid_qsys_0">sysid_qsys_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_onchip_memory2_0">onchip_memory2_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_i2c_0">i2c_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_sdrampll">sdrampll</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;inclk_interface</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">HIDDEN_CUSTOM_ELABORATION</td>
+        <td class="parametervalue">altpll_avalon_elaboration</td>
+       </tr>
+       <tr>
+        <td class="parametername">HIDDEN_CUSTOM_POST_EDIT</td>
+        <td class="parametervalue">altpll_avalon_post_edit</td>
+       </tr>
+       <tr>
+        <td class="parametername">INTENDED_DEVICE_FAMILY</td>
+        <td class="parametervalue">MAX 10</td>
+       </tr>
+       <tr>
+        <td class="parametername">WIDTH_CLOCK</td>
+        <td class="parametervalue">5</td>
+       </tr>
+       <tr>
+        <td class="parametername">WIDTH_PHASECOUNTERSELECT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PRIMARY_CLOCK</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">INCLK0_INPUT_FREQUENCY</td>
+        <td class="parametervalue">20000</td>
+       </tr>
+       <tr>
+        <td class="parametername">INCLK1_INPUT_FREQUENCY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">OPERATION_MODE</td>
+        <td class="parametervalue">NORMAL</td>
+       </tr>
+       <tr>
+        <td class="parametername">PLL_TYPE</td>
+        <td class="parametervalue">AUTO</td>
+       </tr>
+       <tr>
+        <td class="parametername">QUALIFY_CONF_DONE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">COMPENSATE_CLOCK</td>
+        <td class="parametervalue">CLK0</td>
+       </tr>
+       <tr>
+        <td class="parametername">SCAN_CHAIN</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">GATE_LOCK_SIGNAL</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">GATE_LOCK_COUNTER</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">LOCK_HIGH</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">LOCK_LOW</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">VALID_LOCK_MULTIPLIER</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">INVALID_LOCK_MULTIPLIER</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SWITCH_OVER_ON_LOSSCLK</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SWITCH_OVER_ON_GATED_LOCK</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">ENABLE_SWITCH_OVER_COUNTER</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SKIP_VCO</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SWITCH_OVER_COUNTER</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SWITCH_OVER_TYPE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">FEEDBACK_SOURCE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">BANDWIDTH</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">BANDWIDTH_TYPE</td>
+        <td class="parametervalue">AUTO</td>
+       </tr>
+       <tr>
+        <td class="parametername">SPREAD_FREQUENCY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">DOWN_SPREAD</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SELF_RESET_ON_GATED_LOSS_LOCK</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SELF_RESET_ON_LOSS_LOCK</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK0_MULTIPLY_BY</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK1_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK2_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK3_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK4_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK5_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK6_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK7_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK8_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK9_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK0_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK1_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK2_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK3_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK0_DIVIDE_BY</td>
+        <td class="parametervalue">5</td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK1_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK2_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK3_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK4_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK5_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK6_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK7_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK8_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK9_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK0_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK1_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK2_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK3_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK0_PHASE_SHIFT</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK1_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK2_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK3_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK4_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK5_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK6_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK7_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK8_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK9_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK0_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK1_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK2_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK3_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK0_DUTY_CYCLE</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK1_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK2_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK3_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK4_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK5_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK6_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK7_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK8_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">CLK9_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK0_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK1_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK2_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXTCLK3_DUTY_CYCLE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clkena0</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clkena1</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clkena2</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clkena3</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clkena4</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clkena5</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_extclkena0</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_extclkena1</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_extclkena2</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_extclkena3</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_extclk0</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_extclk1</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_extclk2</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_extclk3</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_CLKBAD0</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_CLKBAD1</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk0</td>
+        <td class="parametervalue">PORT_USED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk1</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk2</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk3</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk4</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk5</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk6</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk7</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk8</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_clk9</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCANDATA</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCANDATAOUT</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCANDONE</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCLKOUT1</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCLKOUT0</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_ACTIVECLOCK</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_CLKLOSS</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_INCLK1</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_INCLK0</td>
+        <td class="parametervalue">PORT_USED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_FBIN</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_PLLENA</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_CLKSWITCH</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_ARESET</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_PFDENA</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCANCLK</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCANACLR</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCANREAD</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCANWRITE</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_ENABLE0</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_ENABLE1</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_LOCKED</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_CONFIGUPDATE</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_FBOUT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_PHASEDONE</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_PHASESTEP</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_PHASEUPDOWN</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_SCANCLKENA</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_PHASECOUNTERSELECT</td>
+        <td class="parametervalue">PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_VCOOVERRANGE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">PORT_VCOUNDERRANGE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">DPA_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">DPA_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">DPA_DIVIDER</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">VCO_MULTIPLY_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">VCO_DIVIDE_BY</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SCLKOUT0_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SCLKOUT1_PHASE_SHIFT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">VCO_FREQUENCY_CONTROL</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">VCO_PHASE_SHIFT_STEP</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">USING_FBMIMICBIDIR_PORT</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">SCAN_CHAIN_MIF_FILE</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">AVALON_USE_SEPARATE_SYSCLK</td>
+        <td class="parametervalue">NO</td>
+       </tr>
+       <tr>
+        <td class="parametername">HIDDEN_CONSTANTS</td>
+        <td class="parametervalue">CT#PORT_clk5 PORT_UNUSED CT#PORT_clk4 PORT_UNUSED CT#PORT_clk3 PORT_UNUSED CT#PORT_clk2 PORT_UNUSED CT#PORT_clk1 PORT_UNUSED CT#PORT_clk0 PORT_USED CT#CLK0_MULTIPLY_BY 8 CT#PORT_SCANWRITE PORT_UNUSED CT#PORT_SCANACLR PORT_UNUSED CT#PORT_PFDENA PORT_UNUSED CT#PORT_PLLENA PORT_UNUSED CT#PORT_SCANDATA PORT_UNUSED CT#PORT_SCANCLKENA PORT_UNUSED CT#WIDTH_CLOCK 5 CT#PORT_SCANDATAOUT PORT_UNUSED CT#LPM_TYPE altpll CT#PLL_TYPE AUTO CT#CLK0_PHASE_SHIFT 0 CT#PORT_PHASEDONE PORT_UNUSED CT#OPERATION_MODE NORMAL CT#PORT_CONFIGUPDATE PORT_UNUSED CT#COMPENSATE_CLOCK CLK0 CT#PORT_CLKSWITCH PORT_UNUSED CT#INCLK0_INPUT_FREQUENCY 20000 CT#PORT_SCANDONE PORT_UNUSED CT#PORT_CLKLOSS PORT_UNUSED CT#PORT_INCLK1 PORT_UNUSED CT#AVALON_USE_SEPARATE_SYSCLK NO CT#PORT_INCLK0 PORT_USED CT#PORT_clkena5 PORT_UNUSED CT#PORT_clkena4 PORT_UNUSED CT#PORT_clkena3 PORT_UNUSED CT#PORT_clkena2 PORT_UNUSED CT#PORT_clkena1 PORT_UNUSED CT#PORT_clkena0 PORT_UNUSED CT#PORT_ARESET PORT_UNUSED CT#BANDWIDTH_TYPE AUTO CT#INTENDED_DEVICE_FAMILY {MAX 10} CT#PORT_SCANREAD PORT_UNUSED CT#PORT_PHASESTEP PORT_UNUSED CT#PORT_SCANCLK PORT_UNUSED CT#PORT_CLKBAD1 PORT_UNUSED CT#PORT_CLKBAD0 PORT_UNUSED CT#PORT_FBIN PORT_UNUSED CT#PORT_PHASEUPDOWN PORT_UNUSED CT#PORT_extclk3 PORT_UNUSED CT#PORT_extclk2 PORT_UNUSED CT#PORT_extclk1 PORT_UNUSED CT#PORT_PHASECOUNTERSELECT PORT_UNUSED CT#PORT_extclk0 PORT_UNUSED CT#PORT_ACTIVECLOCK PORT_UNUSED CT#CLK0_DUTY_CYCLE 50 CT#CLK0_DIVIDE_BY 5 CT#PORT_LOCKED PORT_UNUSED</td>
+       </tr>
+       <tr>
+        <td class="parametername">HIDDEN_PRIVATES</td>
+        <td class="parametervalue">PT#GLOCKED_FEATURE_ENABLED 0 PT#SPREAD_FEATURE_ENABLED 0 PT#BANDWIDTH_FREQ_UNIT MHz PT#CUR_DEDICATED_CLK c0 PT#INCLK0_FREQ_EDIT 50.000 PT#BANDWIDTH_PRESET Low PT#PLL_LVDS_PLL_CHECK 0 PT#BANDWIDTH_USE_PRESET 0 PT#AVALON_USE_SEPARATE_SYSCLK NO PT#PLL_ENHPLL_CHECK 0 PT#OUTPUT_FREQ_UNIT0 MHz PT#PHASE_RECONFIG_FEATURE_ENABLED 1 PT#CREATE_CLKBAD_CHECK 0 PT#CLKSWITCH_CHECK 0 PT#INCLK1_FREQ_EDIT 100.000 PT#NORMAL_MODE_RADIO 1 PT#SRC_SYNCH_COMP_RADIO 0 PT#PLL_ARESET_CHECK 0 PT#LONG_SCAN_RADIO 1 PT#SCAN_FEATURE_ENABLED 1 PT#PHASE_RECONFIG_INPUTS_CHECK 0 PT#USE_CLK0 1 PT#PRIMARY_CLK_COMBO inclk0 PT#BANDWIDTH 1.000 PT#GLOCKED_COUNTER_EDIT_CHANGED 1 PT#PLL_FASTPLL_CHECK 0 PT#SPREAD_FREQ_UNIT KHz PT#PLL_AUTOPLL_CHECK 1 PT#LVDS_PHASE_SHIFT_UNIT0 deg PT#SWITCHOVER_FEATURE_ENABLED 0 PT#MIG_DEVICE_SPEED_GRADE Any PT#OUTPUT_FREQ_MODE0 1 PT#BANDWIDTH_FEATURE_ENABLED 1 PT#INCLK0_FREQ_UNIT_COMBO MHz PT#ZERO_DELAY_RADIO 0 PT#OUTPUT_FREQ0 80.00000000 PT#SHORT_SCAN_RADIO 0 PT#LVDS_MODE_DATA_RATE_DIRTY 0 PT#CUR_FBIN_CLK c0 PT#PLL_ADVANCED_PARAM_CHECK 0 PT#CLKBAD_SWITCHOVER_CHECK 0 PT#PHASE_SHIFT_STEP_ENABLED_CHECK 0 PT#DEVICE_SPEED_GRADE Any PT#PLL_FBMIMIC_CHECK 0 PT#LVDS_MODE_DATA_RATE {Not Available} PT#LOCKED_OUTPUT_CHECK 0 PT#SPREAD_PERCENT 0.500 PT#PHASE_SHIFT0 0.00000000 PT#DIV_FACTOR0 1 PT#CNX_NO_COMPENSATE_RADIO 0 PT#USE_CLKENA0 0 PT#CREATE_INCLK1_CHECK 0 PT#GLOCK_COUNTER_EDIT 1048575 PT#INCLK1_FREQ_UNIT_COMBO MHz PT#EFF_OUTPUT_FREQ_VALUE0 80.000000 PT#SPREAD_FREQ 50.000 PT#USE_MIL_SPEED_GRADE 0 PT#EXPLICIT_SWITCHOVER_COUNTER 0 PT#STICKY_CLK4 0 PT#STICKY_CLK3 0 PT#STICKY_CLK2 0 PT#STICKY_CLK1 0 PT#STICKY_CLK0 1 PT#EXT_FEEDBACK_RADIO 0 PT#MIRROR_CLK0 0 PT#SWITCHOVER_COUNT_EDIT 1 PT#SELF_RESET_LOCK_LOSS 0 PT#PLL_PFDENA_CHECK 0 PT#INT_FEEDBACK__MODE_RADIO 1 PT#INCLK1_FREQ_EDIT_CHANGED 1 PT#CLKLOSS_CHECK 0 PT#SYNTH_WRAPPER_GEN_POSTFIX 0 PT#PHASE_SHIFT_UNIT0 deg PT#BANDWIDTH_USE_AUTO 1 PT#HAS_MANUAL_SWITCHOVER 1 PT#MULT_FACTOR0 1 PT#SPREAD_USE 0 PT#GLOCKED_MODE_CHECK 0 PT#SACN_INPUTS_CHECK 0 PT#DUTY_CYCLE0 50.00000000 PT#INTENDED_DEVICE_FAMILY {MAX 10} PT#PLL_TARGET_HARCOPY_CHECK 0 PT#INCLK1_FREQ_UNIT_CHANGED 1 PT#RECONFIG_FILE ALTPLL1682385885673365.mif PT#ACTIVECLK_CHECK 0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HIDDEN_USED_PORTS</td>
+        <td class="parametervalue">UP#locked used UP#c0 used UP#areset used UP#inclk0 used</td>
+       </tr>
+       <tr>
+        <td class="parametername">HIDDEN_IS_NUMERIC</td>
+        <td class="parametervalue">IN#WIDTH_CLOCK 1 IN#CLK0_DUTY_CYCLE 1 IN#PLL_TARGET_HARCOPY_CHECK 1 IN#SWITCHOVER_COUNT_EDIT 1 IN#INCLK0_INPUT_FREQUENCY 1 IN#PLL_LVDS_PLL_CHECK 1 IN#PLL_AUTOPLL_CHECK 1 IN#PLL_FASTPLL_CHECK 1 IN#PLL_ENHPLL_CHECK 1 IN#DIV_FACTOR0 1 IN#LVDS_MODE_DATA_RATE_DIRTY 1 IN#GLOCK_COUNTER_EDIT 1 IN#CLK0_DIVIDE_BY 1 IN#MULT_FACTOR0 1 IN#CLK0_MULTIPLY_BY 1 IN#USE_MIL_SPEED_GRADE 1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HIDDEN_MF_PORTS</td>
+        <td class="parametervalue">MF#areset 1 MF#clk 1 MF#locked 1 MF#inclk 1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HIDDEN_IF_PORTS</td>
+        <td class="parametervalue">IF#phasecounterselect {input 3} IF#locked {output 0} IF#reset {input 0} IF#clk {input 0} IF#phaseupdown {input 0} IF#scandone {output 0} IF#readdata {output 32} IF#write {input 0} IF#scanclk {input 0} IF#phasedone {output 0} IF#c4 {output 0} IF#c3 {output 0} IF#c2 {output 0} IF#address {input 2} IF#c1 {output 0} IF#c0 {output 0} IF#writedata {input 32} IF#read {input 0} IF#areset {input 0} IF#scanclkena {input 0} IF#scandataout {output 0} IF#configupdate {input 0} IF#phasestep {input 0} IF#scandata {input 0}</td>
+       </tr>
+       <tr>
+        <td class="parametername">HIDDEN_IS_FIRST_EDIT</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">MAX10FPGA</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_INCLK_INTERFACE_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">MAX 10</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <a name="module_hex_digits_pio"> </a>
   <div>
    <hr/>
@@ -486,7 +1634,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">hex_digits_pio</td>
+      <td class="main" rowspan="12">hex_digits_pio</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -507,15 +1655,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -576,7 +1730,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -657,7 +1811,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -696,7 +1850,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="13">i2c_0</td>
+      <td class="main" rowspan="14">i2c_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;csr</td>
@@ -723,15 +1877,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clock</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -760,7 +1920,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -785,7 +1945,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">USE_AV_ST</td>
@@ -808,7 +1968,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="13">jtag_uart_0</td>
+      <td class="main" rowspan="14">jtag_uart_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;avalon_jtag_slave</td>
@@ -835,15 +1995,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -904,7 +2070,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clkFreq</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">avalonSpec</td>
@@ -972,7 +2138,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="9">key</td>
+      <td class="main" rowspan="10">key</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -987,15 +2153,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -1056,7 +2228,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -1137,7 +2309,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -1176,7 +2348,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">keycode</td>
+      <td class="main" rowspan="12">keycode</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -1197,15 +2369,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -1266,7 +2444,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -1347,7 +2525,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -1386,7 +2564,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="9">leds_pio</td>
+      <td class="main" rowspan="10">leds_pio</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -1401,15 +2579,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -1470,7 +2654,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -1551,7 +2735,223 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_IN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_OUT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_TRI</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">IRQ_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_master_vol"> </a>
+  <div>
+   <hr/>
+   <h2>master_vol</h2>altera_avalon_pio v18.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="12">master_vol</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
+      </td>
+      <td class="from">c0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">bitClearingEdgeCapReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">bitModifyingOutReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">captureEdge</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output</td>
+       </tr>
+       <tr>
+        <td class="parametername">edgeType</td>
+        <td class="parametervalue">RISING</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateIRQ</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irqType</td>
+        <td class="parametervalue">LEVEL</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDoTestBenchWiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDrivenValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">width</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">80000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_tri</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_out</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_in</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_do_test_bench_wiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_edge_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_irq_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BIT_CLEARING_EDGE_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIT_MODIFYING_OUTPUT_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CAPTURE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">DO_TEST_BENCH_WIRING</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DRIVEN_SIM_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">EDGE_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">FREQ</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -1586,16 +2986,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="136">nios2_gen2_0</td>
+      <td class="from">c0&#160;&#160;</td>
+      <td class="main" rowspan="165">nios2_gen2_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -1735,6 +3141,42 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">data_master&#160;&#160;</td>
       <td class="neighbor" rowspan="6">
        <a href="#module_sdrampll">sdrampll</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;pll_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;pll_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;inclk_interface_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_double_clk">double_clk</a>
       </td>
      </tr>
      <tr>
@@ -2219,6 +3661,114 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">data_master&#160;&#160;</td>
       <td class="neighbor" rowspan="6">
        <a href="#module_note_vol_3">note_vol_3</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_master_vol">master_vol</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_vibrato">vibrato</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_reverb">reverb</a>
       </td>
      </tr>
      <tr>
@@ -2973,7 +4523,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">instSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x4000000' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x8000800' end='0x8001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_0.s1' start='0x8001040' end='0x8001080' type='altera_avalon_timer.s1' /&gt;&lt;slave name='i2c_0.csr' start='0x8001080' end='0x80010C0' type='altera_avalon_i2c.csr' /&gt;&lt;slave name='spi_0.spi_control_port' start='0x80010E0' end='0x8001100' type='altera_avalon_spi.spi_control_port' /&gt;&lt;slave name='note_vol_3.s1' start='0x80011D0' end='0x80011E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_2.s1' start='0x80011E0' end='0x80011F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_1.s1' start='0x80011F0' end='0x8001200' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_0.s1' start='0x8001200' end='0x8001210' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x8001210' end='0x8001220' type='altera_avalon_pio.s1' /&gt;&lt;slave name='leds_pio.s1' start='0x8001220' end='0x8001230' type='altera_avalon_pio.s1' /&gt;&lt;slave name='hex_digits_pio.s1' start='0x8001230' end='0x8001240' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_rst.s1' start='0x8001240' end='0x8001250' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_gpx.s1' start='0x8001250' end='0x8001260' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_irq.s1' start='0x8001260' end='0x8001270' type='altera_avalon_pio.s1' /&gt;&lt;slave name='keycode.s1' start='0x8001270' end='0x8001280' type='altera_avalon_pio.s1' /&gt;&lt;slave name='onchip_memory2_0.s1' start='0x8001280' end='0x8001290' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='sdrampll.pll_slave' start='0x8001290' end='0x80012A0' type='altpll.pll_slave' /&gt;&lt;slave name='sysid_qsys_0.control_slave' start='0x80012B0' end='0x80012B8' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x80012B8' end='0x80012C0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='double_clk.pll_slave' start='0x0' end='0x10' type='altpll.pll_slave' /&gt;&lt;slave name='sdram.s1' start='0x4000000' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x8000800' end='0x8001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_0.s1' start='0x8001040' end='0x8001080' type='altera_avalon_timer.s1' /&gt;&lt;slave name='i2c_0.csr' start='0x8001080' end='0x80010C0' type='altera_avalon_i2c.csr' /&gt;&lt;slave name='spi_0.spi_control_port' start='0x80010E0' end='0x8001100' type='altera_avalon_spi.spi_control_port' /&gt;&lt;slave name='note_vol_3.s1' start='0x80011D0' end='0x80011E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_2.s1' start='0x80011E0' end='0x80011F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_1.s1' start='0x80011F0' end='0x8001200' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_0.s1' start='0x8001200' end='0x8001210' type='altera_avalon_pio.s1' /&gt;&lt;slave name='reverb.s1' start='0x8001260' end='0x8001270' type='altera_avalon_pio.s1' /&gt;&lt;slave name='vibrato.s1' start='0x8001270' end='0x8001280' type='altera_avalon_pio.s1' /&gt;&lt;slave name='master_vol.s1' start='0x8001280' end='0x8001290' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x8001290' end='0x80012A0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='leds_pio.s1' start='0x80012A0' end='0x80012B0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='hex_digits_pio.s1' start='0x80012B0' end='0x80012C0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_rst.s1' start='0x80012C0' end='0x80012D0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_gpx.s1' start='0x80012D0' end='0x80012E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_irq.s1' start='0x80012E0' end='0x80012F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='keycode.s1' start='0x80012F0' end='0x8001300' type='altera_avalon_pio.s1' /&gt;&lt;slave name='onchip_memory2_0.s1' start='0x8001300' end='0x8001310' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='sdrampll.pll_slave' start='0x8001310' end='0x8001320' type='altpll.pll_slave' /&gt;&lt;slave name='sysid_qsys_0.control_slave' start='0x8001330' end='0x8001338' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x8001338' end='0x8001340' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">faSlaveMapParam</td>
@@ -2981,7 +4531,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x4000000' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x8000800' end='0x8001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_0.s1' start='0x8001040' end='0x8001080' type='altera_avalon_timer.s1' /&gt;&lt;slave name='i2c_0.csr' start='0x8001080' end='0x80010C0' type='altera_avalon_i2c.csr' /&gt;&lt;slave name='spi_0.spi_control_port' start='0x80010E0' end='0x8001100' type='altera_avalon_spi.spi_control_port' /&gt;&lt;slave name='note_vol_3.s1' start='0x80011D0' end='0x80011E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_2.s1' start='0x80011E0' end='0x80011F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_1.s1' start='0x80011F0' end='0x8001200' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_0.s1' start='0x8001200' end='0x8001210' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x8001210' end='0x8001220' type='altera_avalon_pio.s1' /&gt;&lt;slave name='leds_pio.s1' start='0x8001220' end='0x8001230' type='altera_avalon_pio.s1' /&gt;&lt;slave name='hex_digits_pio.s1' start='0x8001230' end='0x8001240' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_rst.s1' start='0x8001240' end='0x8001250' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_gpx.s1' start='0x8001250' end='0x8001260' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_irq.s1' start='0x8001260' end='0x8001270' type='altera_avalon_pio.s1' /&gt;&lt;slave name='keycode.s1' start='0x8001270' end='0x8001280' type='altera_avalon_pio.s1' /&gt;&lt;slave name='onchip_memory2_0.s1' start='0x8001280' end='0x8001290' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='sdrampll.pll_slave' start='0x8001290' end='0x80012A0' type='altpll.pll_slave' /&gt;&lt;slave name='sysid_qsys_0.control_slave' start='0x80012B0' end='0x80012B8' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x80012B8' end='0x80012C0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='double_clk.pll_slave' start='0x0' end='0x10' type='altpll.pll_slave' /&gt;&lt;slave name='sdram.s1' start='0x4000000' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x8000800' end='0x8001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_0.s1' start='0x8001040' end='0x8001080' type='altera_avalon_timer.s1' /&gt;&lt;slave name='i2c_0.csr' start='0x8001080' end='0x80010C0' type='altera_avalon_i2c.csr' /&gt;&lt;slave name='spi_0.spi_control_port' start='0x80010E0' end='0x8001100' type='altera_avalon_spi.spi_control_port' /&gt;&lt;slave name='note_vol_3.s1' start='0x80011D0' end='0x80011E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_2.s1' start='0x80011E0' end='0x80011F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_1.s1' start='0x80011F0' end='0x8001200' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_0.s1' start='0x8001200' end='0x8001210' type='altera_avalon_pio.s1' /&gt;&lt;slave name='reverb.s1' start='0x8001260' end='0x8001270' type='altera_avalon_pio.s1' /&gt;&lt;slave name='vibrato.s1' start='0x8001270' end='0x8001280' type='altera_avalon_pio.s1' /&gt;&lt;slave name='master_vol.s1' start='0x8001280' end='0x8001290' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x8001290' end='0x80012A0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='leds_pio.s1' start='0x80012A0' end='0x80012B0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='hex_digits_pio.s1' start='0x80012B0' end='0x80012C0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_rst.s1' start='0x80012C0' end='0x80012D0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_gpx.s1' start='0x80012D0' end='0x80012E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_irq.s1' start='0x80012E0' end='0x80012F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='keycode.s1' start='0x80012F0' end='0x8001300' type='altera_avalon_pio.s1' /&gt;&lt;slave name='onchip_memory2_0.s1' start='0x8001300' end='0x8001310' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='sdrampll.pll_slave' start='0x8001310' end='0x8001320' type='altpll.pll_slave' /&gt;&lt;slave name='sysid_qsys_0.control_slave' start='0x8001330' end='0x8001338' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x8001338' end='0x8001340' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -3025,7 +4575,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockFrequency</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamilyName</td>
@@ -3065,11 +4615,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">AUTO_CLK_CLOCK_DOMAIN</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">3</td>
        </tr>
        <tr>
         <td class="parametername">AUTO_CLK_RESET_DOMAIN</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">3</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -3102,7 +4652,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">CPU_FREQ</td>
-        <td class="parametervalue">50000000u</td>
+        <td class="parametervalue">80000000u</td>
        </tr>
        <tr>
         <td class="parametername">CPU_ID_SIZE</td>
@@ -3217,7 +4767,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">note_vol_0</td>
+      <td class="main" rowspan="12">note_vol_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -3238,15 +4788,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -3307,7 +4863,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -3388,7 +4944,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -3427,7 +4983,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">note_vol_1</td>
+      <td class="main" rowspan="12">note_vol_1</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -3448,15 +5004,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -3517,7 +5079,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -3598,7 +5160,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -3637,7 +5199,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">note_vol_2</td>
+      <td class="main" rowspan="12">note_vol_2</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -3658,15 +5220,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -3727,7 +5295,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -3808,7 +5376,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -3847,7 +5415,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">note_vol_3</td>
+      <td class="main" rowspan="12">note_vol_3</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -3868,15 +5436,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -3937,7 +5511,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -4018,7 +5592,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -4057,7 +5631,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">onchip_memory2_0</td>
+      <td class="main" rowspan="12">onchip_memory2_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -4078,15 +5652,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk1</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -4313,6 +5893,222 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <tr>
         <td class="parametername">WRITABLE</td>
         <td class="parametervalue">1</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_reverb"> </a>
+  <div>
+   <hr/>
+   <h2>reverb</h2>altera_avalon_pio v18.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="12">reverb</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
+      </td>
+      <td class="from">c0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">bitClearingEdgeCapReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">bitModifyingOutReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">captureEdge</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output</td>
+       </tr>
+       <tr>
+        <td class="parametername">edgeType</td>
+        <td class="parametervalue">RISING</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateIRQ</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irqType</td>
+        <td class="parametervalue">LEVEL</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDoTestBenchWiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDrivenValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">width</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">80000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_tri</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_out</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_in</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_do_test_bench_wiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_edge_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_irq_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BIT_CLEARING_EDGE_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIT_MODIFYING_OUTPUT_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CAPTURE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">DO_TEST_BENCH_WIRING</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DRIVEN_SIM_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">EDGE_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">FREQ</td>
+        <td class="parametervalue">80000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_IN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_OUT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_TRI</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">IRQ_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_VALUE</td>
+        <td class="parametervalue">0</td>
        </tr>
       </table>
      </td>
@@ -4619,7 +6415,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="13">sdrampll</td>
+      <td class="main" rowspan="14">sdrampll</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;pll_slave</td>
@@ -4640,15 +6436,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;inclk_interface</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -5334,7 +7136,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">AUTO_INCLK_INTERFACE_CLOCK_RATE</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -5367,7 +7169,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">spi_0</td>
+      <td class="main" rowspan="12">spi_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;spi_control_port</td>
@@ -5388,15 +7190,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -5453,7 +7261,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">targetClockRate</td>
-        <td class="parametervalue">2500000</td>
+        <td class="parametervalue">4000000</td>
        </tr>
        <tr>
         <td class="parametername">targetSlaveSelectToSClkDelay</td>
@@ -5465,11 +7273,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">inputClockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">actualClockRate</td>
-        <td class="parametervalue">2500000.0</td>
+        <td class="parametervalue">4000000.0</td>
        </tr>
        <tr>
         <td class="parametername">actualSlaveSelectToSClkDelay</td>
@@ -5562,7 +7370,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TARGETCLOCK</td>
-        <td class="parametervalue">2500000u</td>
+        <td class="parametervalue">4000000u</td>
        </tr>
        <tr>
         <td class="parametername">TARGETSSDELAY</td>
@@ -5585,7 +7393,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">sysid_qsys_0</td>
+      <td class="main" rowspan="12">sysid_qsys_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;control_slave</td>
@@ -5606,15 +7414,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -5635,7 +7449,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timestamp</td>
-        <td class="parametervalue">1681589624</td>
+        <td class="parametervalue">1682386727</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -5660,7 +7474,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TIMESTAMP</td>
-        <td class="parametervalue">1681589624</td>
+        <td class="parametervalue">1682386727</td>
        </tr>
       </table>
      </td>
@@ -5679,7 +7493,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">timer_0</td>
+      <td class="main" rowspan="12">timer_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -5700,15 +7514,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -5757,7 +7577,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">systemFrequency</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">watchdogPulse</td>
@@ -5777,7 +7597,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">loadValue</td>
-        <td class="parametervalue">49999</td>
+        <td class="parametervalue">79999</td>
        </tr>
        <tr>
         <td class="parametername">mult</td>
@@ -5822,11 +7642,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">LOAD_VALUE</td>
-        <td class="parametervalue">49999</td>
+        <td class="parametervalue">79999</td>
        </tr>
        <tr>
         <td class="parametername">MULT</td>
@@ -5873,7 +7693,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">usb_gpx</td>
+      <td class="main" rowspan="12">usb_gpx</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -5894,15 +7714,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -5963,7 +7789,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -6044,7 +7870,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -6083,7 +7909,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">usb_irq</td>
+      <td class="main" rowspan="12">usb_irq</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -6104,15 +7930,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -6173,7 +8005,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -6254,7 +8086,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -6293,7 +8125,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
       </td>
       <td class="from">data_master&#160;&#160;</td>
-      <td class="main" rowspan="11">usb_rst</td>
+      <td class="main" rowspan="12">usb_rst</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;s1</td>
@@ -6314,15 +8146,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
      </tr>
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
+      <td class="from">c0&#160;&#160;</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
      </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
      <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
       <td class="from">clk_reset&#160;&#160;</td>
      </tr>
      <tr>
@@ -6383,7 +8221,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">clockRate</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">derived_has_tri</td>
@@ -6464,7 +8302,223 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
-        <td class="parametervalue">50000000</td>
+        <td class="parametervalue">80000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_IN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_OUT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_TRI</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">IRQ_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_vibrato"> </a>
+  <div>
+   <hr/>
+   <h2>vibrato</h2>altera_avalon_pio v18.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="12">vibrato</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_double_clk">double_clk</a>
+      </td>
+      <td class="from">c0&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">bitClearingEdgeCapReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">bitModifyingOutReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">captureEdge</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output</td>
+       </tr>
+       <tr>
+        <td class="parametername">edgeType</td>
+        <td class="parametervalue">RISING</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateIRQ</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irqType</td>
+        <td class="parametervalue">LEVEL</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDoTestBenchWiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDrivenValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">width</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">80000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_tri</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_out</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_in</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_do_test_bench_wiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_edge_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_irq_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BIT_CLEARING_EDGE_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIT_MODIFYING_OUTPUT_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CAPTURE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">DO_TEST_BENCH_WIRING</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DRIVEN_SIM_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">EDGE_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">FREQ</td>
+        <td class="parametervalue">80000000</td>
        </tr>
        <tr>
         <td class="parametername">HAS_IN</td>
@@ -6494,7 +8548,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.01 seconds</td>
-    <td class="r">rendering took 0.09 seconds</td>
+    <td class="r">rendering took 0.10 seconds</td>
    </tr>
   </table>
  </body>

@@ -42,7 +42,7 @@
 
 `timescale 1 ns / 1 ns
 
-module synthesizer_soc_mm_interconnect_0_router_016_default_decode
+module synthesizer_soc_mm_interconnect_0_router_017_default_decode
   #(
      parameter DEFAULT_CHANNEL = 0,
                DEFAULT_WR_CHANNEL = -1,
@@ -50,9 +50,9 @@ module synthesizer_soc_mm_interconnect_0_router_016_default_decode
                DEFAULT_DESTID = 0 
    )
   (output [76 - 72 : 0] default_destination_id,
-   output [23-1 : 0] default_wr_channel,
-   output [23-1 : 0] default_rd_channel,
-   output [23-1 : 0] default_src_channel
+   output [24-1 : 0] default_wr_channel,
+   output [24-1 : 0] default_rd_channel,
+   output [24-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -63,7 +63,7 @@ module synthesizer_soc_mm_interconnect_0_router_016_default_decode
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 23'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 24'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,15 +73,15 @@ module synthesizer_soc_mm_interconnect_0_router_016_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 23'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 23'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 24'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 24'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
 endmodule
 
 
-module synthesizer_soc_mm_interconnect_0_router_016
+module synthesizer_soc_mm_interconnect_0_router_017
 (
     // -------------------
     // Clock & Reset
@@ -103,7 +103,7 @@ module synthesizer_soc_mm_interconnect_0_router_016
     // -------------------
     output                          src_valid,
     output reg [90-1    : 0] src_data,
-    output reg [23-1 : 0] src_channel,
+    output reg [24-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -119,7 +119,7 @@ module synthesizer_soc_mm_interconnect_0_router_016
     localparam PKT_PROTECTION_H = 80;
     localparam PKT_PROTECTION_L = 78;
     localparam ST_DATA_W = 90;
-    localparam ST_CHANNEL_W = 23;
+    localparam ST_CHANNEL_W = 24;
     localparam DECODER_TYPE = 1;
 
     localparam PKT_TRANS_WRITE = 48;
@@ -158,7 +158,7 @@ module synthesizer_soc_mm_interconnect_0_router_016
     assign src_valid         = sink_valid;
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
-    wire [23-1 : 0] default_src_channel;
+    wire [24-1 : 0] default_src_channel;
 
 
 
@@ -170,7 +170,7 @@ module synthesizer_soc_mm_interconnect_0_router_016
     assign read_transaction  = sink_data[PKT_TRANS_READ];
 
 
-    synthesizer_soc_mm_interconnect_0_router_016_default_decode the_default_decode(
+    synthesizer_soc_mm_interconnect_0_router_017_default_decode the_default_decode(
       .default_destination_id (),
       .default_wr_channel   (),
       .default_rd_channel   (),
@@ -190,11 +190,11 @@ module synthesizer_soc_mm_interconnect_0_router_016
 
 
         if (destid == 0 ) begin
-            src_channel = 23'b01;
+            src_channel = 24'b01;
         end
 
         if (destid == 1  && read_transaction) begin
-            src_channel = 23'b10;
+            src_channel = 24'b10;
         end
 
 

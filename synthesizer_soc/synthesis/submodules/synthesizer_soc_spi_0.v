@@ -27,10 +27,10 @@
 //4         reserved
 //5         slave-enable  r/w
 //6         end-of-packet-value r/w
-//INPUT_CLOCK: 50000000
+//INPUT_CLOCK: 80000000
 //ISMASTER: 1
 //DATABITS: 8
-//TARGETCLOCK: 2500000
+//TARGETCLOCK: 4000000
 //NUMSLAVES: 1
 //CPOL: 0
 //CPHA: 0

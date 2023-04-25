@@ -49,7 +49,7 @@ module synthesizer_soc_sysid_qsys_0 (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1681589624 : 0;
+  assign readdata = address ? 1682386727 : 0;
 
 endmodule
 

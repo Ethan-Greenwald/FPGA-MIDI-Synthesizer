@@ -8,14 +8,13 @@
 		.key_external_connection_export (<connected-to-key_external_connection_export>), // key_external_connection.export
 		.keycode_export                 (<connected-to-keycode_export>),                 //                 keycode.export
 		.leds_export                    (<connected-to-leds_export>),                    //                    leds.export
+		.master_vol_export              (<connected-to-master_vol_export>),              //              master_vol.export
+		.note_vol_0_export              (<connected-to-note_vol_0_export>),              //              note_vol_0.export
+		.note_vol_1_export              (<connected-to-note_vol_1_export>),              //              note_vol_1.export
+		.note_vol_2_export              (<connected-to-note_vol_2_export>),              //              note_vol_2.export
+		.note_vol_3_export              (<connected-to-note_vol_3_export>),              //              note_vol_3.export
 		.reset_reset_n                  (<connected-to-reset_reset_n>),                  //                   reset.reset_n
-		.spi0_MISO                      (<connected-to-spi0_MISO>),                      //                    spi0.MISO
-		.spi0_MOSI                      (<connected-to-spi0_MOSI>),                      //                        .MOSI
-		.spi0_SCLK                      (<connected-to-spi0_SCLK>),                      //                        .SCLK
-		.spi0_SS_n                      (<connected-to-spi0_SS_n>),                      //                        .SS_n
-		.usb_gpx_export                 (<connected-to-usb_gpx_export>),                 //                 usb_gpx.export
-		.usb_irq_export                 (<connected-to-usb_irq_export>),                 //                 usb_irq.export
-		.usb_rst_export                 (<connected-to-usb_rst_export>),                 //                 usb_rst.export
+		.reverb_export                  (<connected-to-reverb_export>),                  //                  reverb.export
 		.sdram_clk_clk                  (<connected-to-sdram_clk_clk>),                  //               sdram_clk.clk
 		.sdram_wire_addr                (<connected-to-sdram_wire_addr>),                //              sdram_wire.addr
 		.sdram_wire_ba                  (<connected-to-sdram_wire_ba>),                  //                        .ba
@@ -25,6 +24,14 @@
 		.sdram_wire_dq                  (<connected-to-sdram_wire_dq>),                  //                        .dq
 		.sdram_wire_dqm                 (<connected-to-sdram_wire_dqm>),                 //                        .dqm
 		.sdram_wire_ras_n               (<connected-to-sdram_wire_ras_n>),               //                        .ras_n
-		.sdram_wire_we_n                (<connected-to-sdram_wire_we_n>)                 //                        .we_n
+		.sdram_wire_we_n                (<connected-to-sdram_wire_we_n>),                //                        .we_n
+		.spi0_MISO                      (<connected-to-spi0_MISO>),                      //                    spi0.MISO
+		.spi0_MOSI                      (<connected-to-spi0_MOSI>),                      //                        .MOSI
+		.spi0_SCLK                      (<connected-to-spi0_SCLK>),                      //                        .SCLK
+		.spi0_SS_n                      (<connected-to-spi0_SS_n>),                      //                        .SS_n
+		.usb_gpx_export                 (<connected-to-usb_gpx_export>),                 //                 usb_gpx.export
+		.usb_irq_export                 (<connected-to-usb_irq_export>),                 //                 usb_irq.export
+		.usb_rst_export                 (<connected-to-usb_rst_export>),                 //                 usb_rst.export
+		.vibrato_export                 (<connected-to-vibrato_export>)                  //                 vibrato.export
 	);
 

@@ -1,4 +1,4 @@
-module waveform_generator( input clk, reset, input [1:0] wave_select, input [15:0] note_vol, output [23:0] sample);
+module waveform_generator( input clk, reset, input [1:0] wave_select, input [15:0] note_vol, input [7:0] vibrato_level, output [23:0] sample);
 
 	logic [23:0] sq_wv_value, saw_wv_value, tri_wv_value, sine_wv_value;
 	
@@ -6,7 +6,9 @@ module waveform_generator( input clk, reset, input [1:0] wave_select, input [15:
 	logic [22:0] period;
 	
 	initial $readmemh("MIDI_freq_to_period.txt", MIDI_ROM);
-	assign period = MIDI_ROM[note_vol[14:8]];
+	assign period = MIDI_ROM[note_vol[14:8]] + ((vibrato_level - 64)*6000 >> 7); //TODO fix bc not working
+	
+	logic [7:0] volume;
 	
 	sawtooth_wave_generator saw_wv(  .clk, .reset, .period, .volume(note_vol[7:0]), .value(saw_wv_value));
 	square_wave_generator 	sq_wv (  .clk, .reset, .period, .volume(note_vol[7:0]), .value(sq_wv_value));

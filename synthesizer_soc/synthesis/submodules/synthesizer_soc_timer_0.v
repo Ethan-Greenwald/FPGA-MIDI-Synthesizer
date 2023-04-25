@@ -83,7 +83,7 @@ reg              timeout_occurred;
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          internal_counter <= 64'hC34F;
+          internal_counter <= 64'h1387F;
       else if (counter_is_running || force_reload)
           if (counter_is_zero    || force_reload)
               internal_counter <= counter_load_value;
@@ -177,7 +177,7 @@ reg              timeout_occurred;
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          period_halfword_0_register <= 16'hC34F;
+          period_halfword_0_register <= 16'h387F;
       else if (period_halfword_0_wr_strobe)
           period_halfword_0_register <= writedata;
     end
@@ -186,7 +186,7 @@ reg              timeout_occurred;
   always @(posedge clk or negedge reset_n)
     begin
       if (reset_n == 0)
-          period_halfword_1_register <= 16'h0;
+          period_halfword_1_register <= 16'h1;
       else if (period_halfword_1_wr_strobe)
           period_halfword_1_register <= writedata;
     end
