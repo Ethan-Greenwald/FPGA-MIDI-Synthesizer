@@ -6,6 +6,7 @@
 #include <spi4teensy3.h>
 #endif
 #include "include/SPI.h"
+#include <ctime>
 
 void test_loop();
 void press_any_key();
@@ -52,23 +53,30 @@ int main() {
 
 	/* Pointers to PIOs */
 	int NUM_NOTES = 4;
-//	volatile unsigned int *note_vol_0 = (unsigned int*)0x08001200;
-//	volatile unsigned int *note_vol_1 = (unsigned int*)0x080011f0;
-//	volatile unsigned int *note_vol_2 = (unsigned int*)0x080011e0;
-//	volatile unsigned int *note_vol_3 = (unsigned int*)0x080011d0;
 
 	volatile unsigned int* note_vol_array[NUM_NOTES] = {(unsigned int*)0x08001200, (unsigned int*)0x080011f0, (unsigned int*)0x080011e0, (unsigned int*)0x080011d0};
-	/* Initialize all notes/volumes to 0 */
-//	*note_vol_0 = (unsigned int) 0x3C20;	//C4
-//	*note_vol_1 = (unsigned int) 0x4020;	//E4
-//	*note_vol_2 = (unsigned int) 0x4320;	//G4
-//	*note_vol_3 = (unsigned int) 0;
+	volatile unsigned int* master_vol = (unsigned int*)0x08001220;
+	volatile unsigned int* reverb = (unsigned int*)0x08001210;
+	volatile unsigned int* vibrato = (unsigned int*)0x080011c0;
+	unsigned int decay_time, release_time, sustain_level, vol, ms_to_dec;
+
+	/* Initialize effects */
+	*(master_vol) = 64;
+	*(vibrato) = 64;
+	*(reverb) = 0;
+	release_time = 0;
+	decay_time = 0;
+	sustain_level = 127;
+
 	for(int i = 0; i < NUM_NOTES; i++)
 			*(note_vol_array[i]) = 0;
 
+	clock_t note_clocks[NUM_NOTES];
 	int available_idx;
 	bool note_used[NUM_NOTES] = {false};
 	bool first_note = true;
+	bool muted = false;
+
 	while(1){
 		Usb.Task();
 		if(Midi){
@@ -77,15 +85,6 @@ int main() {
 
 			do {
 				if ( (size = Midi.RecvData(MIDI_packet)) > 0 ) {
-					/*
-					MIDI Status Codes:
-					Note On -  1001 CCCC
-					Note Off - 1000 CCCC
-					*/
-//					printf("..........\n");
-//					toBinary(MIDI_packet[0]); printf("\n");
-//					toBinary(MIDI_packet[1]); printf("\n");
-//					toBinary(MIDI_packet[2]); printf("\n");
 
 					switch(unsigned(MIDI_packet[0] >> 4)){
 					case 9:						//Note ON
@@ -93,18 +92,23 @@ int main() {
 							first_note = false;
 							break;
 						}
-						/* Find first available note_vol */
-						available_idx = -1;
-						for(int i = 0; i < NUM_NOTES; i++){
-							if(!note_used[i]){
-								available_idx = i;
-								note_used[i] = true;
-								break;
+
+						if(!muted){	//check muted flag
+							/* Find first available note_vol */
+							available_idx = -1;
+							for(int i = 0; i < NUM_NOTES; i++){
+								if(!note_used[i]){
+									available_idx = i;
+									note_used[i] = true;
+									break;
+								}
+							}
+							/* If a note_vol is available, write to it*/
+							if(available_idx != -1){
+								*(note_vol_array[available_idx]) = (MIDI_packet[1] << 8) + MIDI_packet[2];
+								note_clocks[available_idx] = clock();
 							}
 						}
-						/* If a note_vol is available, write to it*/
-						if(available_idx != -1)
-							*(note_vol_array[available_idx]) = (MIDI_packet[1] << 8) + MIDI_packet[2];
 						break;
 
 					case 8:		//Note OFF
@@ -116,9 +120,81 @@ int main() {
 							}
 						}
 						break;
+
+					case 0xE:	//Pitch wheel
+						*(vibrato) = unsigned(MIDI_packet[2]);
+						printf("Vibrato = %u\n", *vibrato);
+						break;
+
+					case 0xB:	//Additional effects - Byte 2: Volume wheel (01), knobs (14-17), buttons (30-33)
+
+						switch(unsigned(MIDI_packet[1])){
+
+						/* Volume wheel */
+						case 0x01:
+							*(master_vol) = unsigned(MIDI_packet[2]);
+							break;
+
+						/* Knobs */
+						case 0x14:	//Reverb
+							*(reverb) = unsigned(MIDI_packet[2]);
+							break;
+
+						case 0x15:	//Release time
+							release_time = unsigned(MIDI_packet[2]);
+							break;
+
+						case 0x16:	//Decay time
+							ms_to_dec = unsigned(MIDI_packet[2]) + 1;
+							printf("Decay time = %d\n", ms_to_dec);
+							break;
+
+						case 0x17:	//Sustain level
+							sustain_level = unsigned(MIDI_packet[2]);
+							printf("Sustain level = %u\n", sustain_level);
+							break;
+
+						/* Buttons */
+						case 0x30:	//1: mute
+							if(unsigned(MIDI_packet[2]) == 0x7F){	//button ON
+								muted = true;
+								for(int i = 0; i < NUM_NOTES; i++){
+										*(note_vol_array[i]) = 0;
+										note_used[i] = false;
+								}
+							}
+							else
+								muted = false;
+
+							break;
+
+						case 0x31:	//2
+							break;
+						case 0x32:	//3
+							break;
+						case 0x33:	//4
+							break;
+						}
+						break;
 					}
 				}
 			} while (size > 0);
+		}
+		for(int i = 0; i < NUM_NOTES; i++){
+			if(note_used[i]){							//if note is being played
+				vol = *(note_vol_array[i]) & 0x00FF;	//volume is bottom 8 bits
+				if((2000*(clock() - note_clocks[i])/CLOCKS_PER_SEC) >= ms_to_dec){	//if above sustain level, decrement volume
+
+					note_clocks[i] = clock();					//update note clock
+					if( (vol > sustain_level) && (vol > 0) )	//check to decrement volume
+						*(note_vol_array[i]) -= 1;
+					else if(vol == 0){										//turn note off if volume is zero
+						*(note_vol_array[i]) = 0;
+						note_used[i] = false;
+					}
+				}
+			}
+			//TODO implement release time
 		}
 	}
 }
@@ -242,5 +318,3 @@ void press_any_key() {
 //        char x;
 //        scanf("%s", &x);
 }
-
-

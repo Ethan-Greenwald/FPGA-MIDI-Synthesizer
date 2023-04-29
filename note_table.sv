@@ -1,4 +1,4 @@
-module note_table(input [6:0] MIDI_freq, output [23:0] period, output [3:0] note_name, octave, partial);
+module note_table(input [6:0] MIDI_freq, output [3:0] note_name, octave, partial);
 
 	logic [3:0] note;
 	logic flat;

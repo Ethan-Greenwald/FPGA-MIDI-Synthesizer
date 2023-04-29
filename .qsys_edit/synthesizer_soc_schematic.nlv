@@ -1,43 +1,57 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst synthesizer_soc.timer_0 -pg 1 -lvl 3 -y 570
-preplace inst synthesizer_soc.sysid_qsys_0 -pg 1 -lvl 3 -y 670
-preplace inst synthesizer_soc.sdrampll -pg 1 -lvl 3 -y 30
-preplace inst synthesizer_soc.sdram -pg 1 -lvl 3 -y 130
-preplace inst synthesizer_soc.clk_0 -pg 1 -lvl 1 -y 120
-preplace inst synthesizer_soc.usb_rst -pg 1 -lvl 3 -y 1330
-preplace inst synthesizer_soc.onchip_memory2_0 -pg 1 -lvl 3 -y 950
-preplace inst synthesizer_soc.jtag_uart_0 -pg 1 -lvl 3 -y 470
-preplace inst synthesizer_soc.usb_gpx -pg 1 -lvl 3 -y 1130
+preplace inst synthesizer_soc.timer_0 -pg 1 -lvl 3 -y 870
+preplace inst synthesizer_soc.note_vol_0 -pg 1 -lvl 3 -y 130
+preplace inst synthesizer_soc.sysid_qsys_0 -pg 1 -lvl 3 -y 970
+preplace inst synthesizer_soc.sdrampll -pg 1 -lvl 3 -y 230
+preplace inst synthesizer_soc.note_vol_1 -pg 1 -lvl 3 -y 1830
+preplace inst synthesizer_soc.sdram -pg 1 -lvl 3 -y 330
+preplace inst synthesizer_soc.note_vol_2 -pg 1 -lvl 3 -y 1930
+preplace inst synthesizer_soc.master_vol -pg 1 -lvl 3 -y 30
+preplace inst synthesizer_soc.clk_0 -pg 1 -lvl 1 -y 320
+preplace inst synthesizer_soc.usb_rst -pg 1 -lvl 3 -y 1630
+preplace inst synthesizer_soc.note_vol_3 -pg 1 -lvl 3 -y 2030
+preplace inst synthesizer_soc.onchip_memory2_0 -pg 1 -lvl 3 -y 1250
+preplace inst synthesizer_soc.jtag_uart_0 -pg 1 -lvl 3 -y 770
+preplace inst synthesizer_soc.vibrato -pg 1 -lvl 3 -y 2130
+preplace inst synthesizer_soc.usb_gpx -pg 1 -lvl 3 -y 1430
+preplace inst synthesizer_soc.reverb -pg 1 -lvl 3 -y 670
 preplace inst synthesizer_soc.nios2_gen2_0.clock_bridge -pg 1
-preplace inst synthesizer_soc.nios2_gen2_0 -pg 1 -lvl 2 -y 100
-preplace inst synthesizer_soc.hex_digits_pio -pg 1 -lvl 3 -y 1430
-preplace inst synthesizer_soc.keycode -pg 1 -lvl 3 -y 850
-preplace inst synthesizer_soc.key -pg 1 -lvl 3 -y 750
+preplace inst synthesizer_soc.nios2_gen2_0 -pg 1 -lvl 2 -y 270
+preplace inst synthesizer_soc.hex_digits_pio -pg 1 -lvl 3 -y 1730
+preplace inst synthesizer_soc.keycode -pg 1 -lvl 3 -y 1150
+preplace inst synthesizer_soc.key -pg 1 -lvl 3 -y 1050
 preplace inst synthesizer_soc.nios2_gen2_0.reset_bridge -pg 1
-preplace inst synthesizer_soc.usb_irq -pg 1 -lvl 3 -y 1230
-preplace inst synthesizer_soc.spi_0 -pg 1 -lvl 3 -y 350
+preplace inst synthesizer_soc.usb_irq -pg 1 -lvl 3 -y 1530
+preplace inst synthesizer_soc.spi_0 -pg 1 -lvl 3 -y 550
 preplace inst synthesizer_soc.nios2_gen2_0.cpu -pg 1
-preplace inst synthesizer_soc.leds_pio -pg 1 -lvl 3 -y 1030
-preplace inst synthesizer_soc.i2c_0 -pg 1 -lvl 3 -y 230
+preplace inst synthesizer_soc.leds_pio -pg 1 -lvl 3 -y 1330
+preplace inst synthesizer_soc.i2c_0 -pg 1 -lvl 3 -y 430
 preplace inst synthesizer_soc -pg 1 -lvl 1 -y 40 -regy -20
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.i2c0,(SLAVE)i2c_0.i2c_serial) 1 0 3 NJ 300 NJ 300 NJ
-preplace netloc POINT_TO_POINT<net_container>synthesizer_soc</net_container>(SLAVE)sdram.clk,(MASTER)sdrampll.c0) 1 2 2 840 120 1080
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.usb_gpx,(SLAVE)usb_gpx.external_connection) 1 0 3 NJ 1460 NJ 1460 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)spi_0.external,(SLAVE)synthesizer_soc.spi0) 1 0 3 NJ 580 NJ 580 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.master_vol,(SLAVE)master_vol.external_connection) 1 0 3 NJ 60 NJ 60 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)leds_pio.external_connection,(SLAVE)synthesizer_soc.leds) 1 0 3 NJ 1360 NJ 1360 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.i2c0,(SLAVE)i2c_0.i2c_serial) 1 0 3 NJ 500 NJ 500 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.sdram_wire,(SLAVE)sdram.wire) 1 0 3 NJ 310 NJ 430 NJ
 preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)synthesizer_soc.reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)usb_irq.external_connection,(SLAVE)synthesizer_soc.usb_irq) 1 0 3 NJ 1260 NJ 1260 NJ
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)keycode.external_connection,(SLAVE)synthesizer_soc.keycode) 1 0 3 NJ 880 NJ 880 NJ
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.key_external_connection,(SLAVE)key.external_connection) 1 0 3 NJ 780 NJ 780 NJ
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.hex_digits,(SLAVE)hex_digits_pio.external_connection) 1 0 3 NJ 1460 NJ 1460 NJ
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
-preplace netloc INTERCONNECT<net_container>synthesizer_soc</net_container>(SLAVE)usb_gpx.reset,(SLAVE)keycode.reset,(SLAVE)usb_rst.reset,(SLAVE)timer_0.reset,(SLAVE)key.reset,(SLAVE)hex_digits_pio.reset,(SLAVE)i2c_0.reset_sink,(SLAVE)jtag_uart_0.reset,(SLAVE)usb_irq.reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)leds_pio.reset,(MASTER)clk_0.clk_reset,(SLAVE)sdrampll.inclk_interface_reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)sysid_qsys_0.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)spi_0.reset,(SLAVE)sdram.reset) 1 1 2 360 1480 780
-preplace netloc FAN_OUT<net_container>synthesizer_soc</net_container>(SLAVE)timer_0.irq,(MASTER)nios2_gen2_0.irq,(SLAVE)i2c_0.interrupt_sender,(SLAVE)spi_0.irq,(SLAVE)jtag_uart_0.irq) 1 2 1 740
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)usb_gpx.external_connection,(SLAVE)synthesizer_soc.usb_gpx) 1 0 3 NJ 1160 NJ 1160 NJ
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)sdram.wire,(SLAVE)synthesizer_soc.sdram_wire) 1 0 3 NJ 240 NJ 240 NJ
-preplace netloc INTERCONNECT<net_container>synthesizer_soc</net_container>(SLAVE)spi_0.spi_control_port,(SLAVE)nios2_gen2_0.debug_mem_slave,(SLAVE)keycode.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)key.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)sdrampll.pll_slave,(SLAVE)usb_rst.s1,(SLAVE)leds_pio.s1,(MASTER)nios2_gen2_0.instruction_master,(MASTER)nios2_gen2_0.data_master,(SLAVE)hex_digits_pio.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)sdram.s1,(SLAVE)timer_0.s1,(SLAVE)i2c_0.csr,(SLAVE)usb_irq.s1,(SLAVE)usb_gpx.s1) 1 1 2 380 60 760
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)note_vol_2.external_connection,(SLAVE)synthesizer_soc.note_vol_2) 1 0 3 NJ 1960 NJ 1960 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.keycode,(SLAVE)keycode.external_connection) 1 0 3 NJ 1180 NJ 1180 NJ
+preplace netloc FAN_OUT<net_container>synthesizer_soc</net_container>(SLAVE)jtag_uart_0.irq,(SLAVE)timer_0.irq,(MASTER)nios2_gen2_0.irq,(SLAVE)spi_0.irq,(SLAVE)i2c_0.interrupt_sender) 1 2 1 780
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)usb_irq.external_connection,(SLAVE)synthesizer_soc.usb_irq) 1 0 3 NJ 1560 NJ 1560 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)reverb.external_connection,(SLAVE)synthesizer_soc.reverb) 1 0 3 NJ 700 NJ 700 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.hex_digits,(SLAVE)hex_digits_pio.external_connection) 1 0 3 NJ 1760 NJ 1760 NJ
+preplace netloc FAN_OUT<net_container>synthesizer_soc</net_container>(SLAVE)usb_rst.clk,(SLAVE)note_vol_2.clk,(MASTER)clk_0.clk,(SLAVE)sdrampll.inclk_interface,(SLAVE)hex_digits_pio.clk,(SLAVE)note_vol_3.clk,(SLAVE)note_vol_1.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)timer_0.clk,(SLAVE)keycode.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)usb_gpx.clk,(SLAVE)reverb.clk,(SLAVE)master_vol.clk,(SLAVE)vibrato.clk,(SLAVE)i2c_0.clock,(SLAVE)usb_irq.clk,(SLAVE)key.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)leds_pio.clk,(SLAVE)spi_0.clk,(SLAVE)note_vol_0.clk) 1 1 2 380 450 860
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.vibrato,(SLAVE)vibrato.external_connection) 1 0 3 NJ 2160 NJ 2160 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)clk_0.clk_in,(SLAVE)synthesizer_soc.clk) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>synthesizer_soc</net_container>(MASTER)sdrampll.c0,(SLAVE)sdram.clk) 1 2 2 880 320 1120
 preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(MASTER)synthesizer_soc.sdram_clk,(MASTER)sdrampll.c1) 1 3 1 N
-preplace netloc FAN_OUT<net_container>synthesizer_soc</net_container>(SLAVE)usb_gpx.clk,(SLAVE)sdrampll.inclk_interface,(SLAVE)spi_0.clk,(MASTER)clk_0.clk,(SLAVE)usb_rst.clk,(SLAVE)key.clk,(SLAVE)timer_0.clk,(SLAVE)keycode.clk,(SLAVE)i2c_0.clock,(SLAVE)jtag_uart_0.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)hex_digits_pio.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)leds_pio.clk,(SLAVE)usb_irq.clk,(SLAVE)onchip_memory2_0.clk1) 1 1 2 360 40 820
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.spi0,(SLAVE)spi_0.external) 1 0 3 NJ 380 NJ 380 NJ
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.usb_rst,(SLAVE)usb_rst.external_connection) 1 0 3 NJ 1360 NJ 1360 NJ
-preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.leds,(SLAVE)leds_pio.external_connection) 1 0 3 NJ 1060 NJ 1060 NJ
-levelinfo -pg 1 0 150 1190
-levelinfo -hier synthesizer_soc 160 190 500 890 1100
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.note_vol_3,(SLAVE)note_vol_3.external_connection) 1 0 3 NJ 2060 NJ 2060 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.note_vol_1,(SLAVE)note_vol_1.external_connection) 1 0 3 NJ 1860 NJ 1860 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)usb_rst.external_connection,(SLAVE)synthesizer_soc.usb_rst) 1 0 3 NJ 1660 NJ 1660 NJ
+preplace netloc INTERCONNECT<net_container>synthesizer_soc</net_container>(SLAVE)jtag_uart_0.reset,(SLAVE)usb_rst.reset,(SLAVE)key.reset,(SLAVE)note_vol_1.reset,(SLAVE)note_vol_2.reset,(SLAVE)master_vol.reset,(SLAVE)leds_pio.reset,(SLAVE)i2c_0.reset_sink,(SLAVE)onchip_memory2_0.reset1,(SLAVE)note_vol_3.reset,(SLAVE)sdram.reset,(SLAVE)nios2_gen2_0.reset,(SLAVE)keycode.reset,(SLAVE)hex_digits_pio.reset,(SLAVE)sdrampll.inclk_interface_reset,(SLAVE)spi_0.reset,(SLAVE)usb_irq.reset,(SLAVE)usb_gpx.reset,(MASTER)clk_0.clk_reset,(SLAVE)note_vol_0.reset,(SLAVE)reverb.reset,(MASTER)nios2_gen2_0.debug_reset_request,(SLAVE)timer_0.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)vibrato.reset) 1 1 2 400 470 800
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)synthesizer_soc.note_vol_0,(SLAVE)note_vol_0.external_connection) 1 0 3 NJ 160 NJ 160 NJ
+preplace netloc EXPORT<net_container>synthesizer_soc</net_container>(SLAVE)key.external_connection,(SLAVE)synthesizer_soc.key_external_connection) 1 0 3 NJ 1080 NJ 1080 NJ
+preplace netloc INTERCONNECT<net_container>synthesizer_soc</net_container>(SLAVE)master_vol.s1,(SLAVE)vibrato.s1,(SLAVE)reverb.s1,(SLAVE)sdram.s1,(SLAVE)jtag_uart_0.avalon_jtag_slave,(SLAVE)keycode.s1,(SLAVE)note_vol_3.s1,(MASTER)nios2_gen2_0.data_master,(SLAVE)note_vol_1.s1,(SLAVE)hex_digits_pio.s1,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)key.s1,(SLAVE)onchip_memory2_0.s1,(SLAVE)usb_irq.s1,(SLAVE)spi_0.spi_control_port,(SLAVE)note_vol_2.s1,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)sdrampll.pll_slave,(SLAVE)timer_0.s1,(SLAVE)i2c_0.csr,(SLAVE)usb_rst.s1,(SLAVE)note_vol_0.s1,(SLAVE)usb_gpx.s1,(SLAVE)leds_pio.s1,(SLAVE)nios2_gen2_0.debug_mem_slave) 1 1 2 420 410 820
+levelinfo -pg 1 0 150 1230
+levelinfo -hier synthesizer_soc 160 190 540 930 1140

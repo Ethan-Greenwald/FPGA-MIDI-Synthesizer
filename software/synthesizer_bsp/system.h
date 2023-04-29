@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'synthesizer_soc'
  * SOPC Builder design path: ../../synthesizer_soc.sopcinfo
  *
- * Generated: Sat Apr 15 15:18:12 CDT 2023
+ * Generated: Sat Apr 29 13:48:53 CDT 2023
  */
 
 /*
@@ -161,19 +161,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x80012b8
+#define ALT_STDERR_BASE 0x80012d8
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x80012b8
+#define ALT_STDIN_BASE 0x80012d8
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x80012b8
+#define ALT_STDOUT_BASE 0x80012d8
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -198,7 +198,7 @@
  */
 
 #define ALT_MODULE_CLASS_hex_digits_pio altera_avalon_pio
-#define HEX_DIGITS_PIO_BASE 0x8001230
+#define HEX_DIGITS_PIO_BASE 0x8001250
 #define HEX_DIGITS_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_DIGITS_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_DIGITS_PIO_CAPTURE 0
@@ -242,7 +242,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x80012b8
+#define JTAG_UART_0_BASE 0x80012d8
 #define JTAG_UART_0_IRQ 1
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -260,7 +260,7 @@
  */
 
 #define ALT_MODULE_CLASS_key altera_avalon_pio
-#define KEY_BASE 0x8001210
+#define KEY_BASE 0x8001230
 #define KEY_BIT_CLEARING_EDGE_REGISTER 0
 #define KEY_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define KEY_CAPTURE 0
@@ -287,7 +287,7 @@
  */
 
 #define ALT_MODULE_CLASS_keycode altera_avalon_pio
-#define KEYCODE_BASE 0x8001270
+#define KEYCODE_BASE 0x8001290
 #define KEYCODE_BIT_CLEARING_EDGE_REGISTER 0
 #define KEYCODE_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define KEYCODE_CAPTURE 0
@@ -314,7 +314,7 @@
  */
 
 #define ALT_MODULE_CLASS_leds_pio altera_avalon_pio
-#define LEDS_PIO_BASE 0x8001220
+#define LEDS_PIO_BASE 0x8001240
 #define LEDS_PIO_BIT_CLEARING_EDGE_REGISTER 0
 #define LEDS_PIO_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LEDS_PIO_CAPTURE 0
@@ -333,6 +333,33 @@
 #define LEDS_PIO_RESET_VALUE 0
 #define LEDS_PIO_SPAN 16
 #define LEDS_PIO_TYPE "altera_avalon_pio"
+
+
+/*
+ * master_vol configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_master_vol altera_avalon_pio
+#define MASTER_VOL_BASE 0x8001220
+#define MASTER_VOL_BIT_CLEARING_EDGE_REGISTER 0
+#define MASTER_VOL_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define MASTER_VOL_CAPTURE 0
+#define MASTER_VOL_DATA_WIDTH 8
+#define MASTER_VOL_DO_TEST_BENCH_WIRING 0
+#define MASTER_VOL_DRIVEN_SIM_VALUE 0
+#define MASTER_VOL_EDGE_TYPE "NONE"
+#define MASTER_VOL_FREQ 50000000
+#define MASTER_VOL_HAS_IN 0
+#define MASTER_VOL_HAS_OUT 1
+#define MASTER_VOL_HAS_TRI 0
+#define MASTER_VOL_IRQ -1
+#define MASTER_VOL_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define MASTER_VOL_IRQ_TYPE "NONE"
+#define MASTER_VOL_NAME "/dev/master_vol"
+#define MASTER_VOL_RESET_VALUE 0
+#define MASTER_VOL_SPAN 16
+#define MASTER_VOL_TYPE "altera_avalon_pio"
 
 
 /*
@@ -451,7 +478,7 @@
 #define ALT_MODULE_CLASS_onchip_memory2_0 altera_avalon_onchip_memory2
 #define ONCHIP_MEMORY2_0_ALLOW_IN_SYSTEM_MEMORY_CONTENT_EDITOR 0
 #define ONCHIP_MEMORY2_0_ALLOW_MRAM_SIM_CONTENTS_ONLY_FILE 0
-#define ONCHIP_MEMORY2_0_BASE 0x8001280
+#define ONCHIP_MEMORY2_0_BASE 0x80012a0
 #define ONCHIP_MEMORY2_0_CONTENTS_INFO ""
 #define ONCHIP_MEMORY2_0_DUAL_PORT 0
 #define ONCHIP_MEMORY2_0_GUI_RAM_BLOCK_TYPE "AUTO"
@@ -470,6 +497,33 @@
 #define ONCHIP_MEMORY2_0_SPAN 16
 #define ONCHIP_MEMORY2_0_TYPE "altera_avalon_onchip_memory2"
 #define ONCHIP_MEMORY2_0_WRITABLE 1
+
+
+/*
+ * reverb configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_reverb altera_avalon_pio
+#define REVERB_BASE 0x8001210
+#define REVERB_BIT_CLEARING_EDGE_REGISTER 0
+#define REVERB_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define REVERB_CAPTURE 0
+#define REVERB_DATA_WIDTH 8
+#define REVERB_DO_TEST_BENCH_WIRING 0
+#define REVERB_DRIVEN_SIM_VALUE 0
+#define REVERB_EDGE_TYPE "NONE"
+#define REVERB_FREQ 50000000
+#define REVERB_HAS_IN 0
+#define REVERB_HAS_OUT 1
+#define REVERB_HAS_TRI 0
+#define REVERB_IRQ -1
+#define REVERB_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define REVERB_IRQ_TYPE "NONE"
+#define REVERB_NAME "/dev/reverb"
+#define REVERB_RESET_VALUE 0
+#define REVERB_SPAN 16
+#define REVERB_TYPE "altera_avalon_pio"
 
 
 /*
@@ -517,7 +571,7 @@
  */
 
 #define ALT_MODULE_CLASS_sdrampll altpll
-#define SDRAMPLL_BASE 0x8001290
+#define SDRAMPLL_BASE 0x80012b0
 #define SDRAMPLL_IRQ -1
 #define SDRAMPLL_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SDRAMPLL_NAME "/dev/sdrampll"
@@ -562,13 +616,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x80012b0
+#define SYSID_QSYS_0_BASE 0x80012d0
 #define SYSID_QSYS_0_ID 0
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1681589624
+#define SYSID_QSYS_0_TIMESTAMP 1682793879
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -604,7 +658,7 @@
  */
 
 #define ALT_MODULE_CLASS_usb_gpx altera_avalon_pio
-#define USB_GPX_BASE 0x8001250
+#define USB_GPX_BASE 0x8001270
 #define USB_GPX_BIT_CLEARING_EDGE_REGISTER 0
 #define USB_GPX_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define USB_GPX_CAPTURE 0
@@ -631,7 +685,7 @@
  */
 
 #define ALT_MODULE_CLASS_usb_irq altera_avalon_pio
-#define USB_IRQ_BASE 0x8001260
+#define USB_IRQ_BASE 0x8001280
 #define USB_IRQ_BIT_CLEARING_EDGE_REGISTER 0
 #define USB_IRQ_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define USB_IRQ_CAPTURE 0
@@ -658,7 +712,7 @@
  */
 
 #define ALT_MODULE_CLASS_usb_rst altera_avalon_pio
-#define USB_RST_BASE 0x8001240
+#define USB_RST_BASE 0x8001260
 #define USB_RST_BIT_CLEARING_EDGE_REGISTER 0
 #define USB_RST_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define USB_RST_CAPTURE 0
@@ -677,5 +731,32 @@
 #define USB_RST_RESET_VALUE 0
 #define USB_RST_SPAN 16
 #define USB_RST_TYPE "altera_avalon_pio"
+
+
+/*
+ * vibrato configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_vibrato altera_avalon_pio
+#define VIBRATO_BASE 0x80011c0
+#define VIBRATO_BIT_CLEARING_EDGE_REGISTER 0
+#define VIBRATO_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define VIBRATO_CAPTURE 0
+#define VIBRATO_DATA_WIDTH 8
+#define VIBRATO_DO_TEST_BENCH_WIRING 0
+#define VIBRATO_DRIVEN_SIM_VALUE 0
+#define VIBRATO_EDGE_TYPE "NONE"
+#define VIBRATO_FREQ 50000000
+#define VIBRATO_HAS_IN 0
+#define VIBRATO_HAS_OUT 1
+#define VIBRATO_HAS_TRI 0
+#define VIBRATO_IRQ -1
+#define VIBRATO_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define VIBRATO_IRQ_TYPE "NONE"
+#define VIBRATO_NAME "/dev/vibrato"
+#define VIBRATO_RESET_VALUE 0
+#define VIBRATO_SPAN 16
+#define VIBRATO_TYPE "altera_avalon_pio"
 
 #endif /* __SYSTEM_H_ */

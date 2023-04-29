@@ -9,14 +9,13 @@ module synthesizer_soc (
 	key_external_connection_export,
 	keycode_export,
 	leds_export,
+	master_vol_export,
+	note_vol_0_export,
+	note_vol_1_export,
+	note_vol_2_export,
+	note_vol_3_export,
 	reset_reset_n,
-	spi0_MISO,
-	spi0_MOSI,
-	spi0_SCLK,
-	spi0_SS_n,
-	usb_gpx_export,
-	usb_irq_export,
-	usb_rst_export,
+	reverb_export,
 	sdram_clk_clk,
 	sdram_wire_addr,
 	sdram_wire_ba,
@@ -26,7 +25,15 @@ module synthesizer_soc (
 	sdram_wire_dq,
 	sdram_wire_dqm,
 	sdram_wire_ras_n,
-	sdram_wire_we_n);	
+	sdram_wire_we_n,
+	spi0_MISO,
+	spi0_MOSI,
+	spi0_SCLK,
+	spi0_SS_n,
+	usb_gpx_export,
+	usb_irq_export,
+	usb_rst_export,
+	vibrato_export);	
 
 	input		clk_clk;
 	output	[15:0]	hex_digits_export;
@@ -37,14 +44,13 @@ module synthesizer_soc (
 	input	[1:0]	key_external_connection_export;
 	output	[7:0]	keycode_export;
 	output	[13:0]	leds_export;
+	output	[7:0]	master_vol_export;
+	output	[15:0]	note_vol_0_export;
+	output	[15:0]	note_vol_1_export;
+	output	[15:0]	note_vol_2_export;
+	output	[15:0]	note_vol_3_export;
 	input		reset_reset_n;
-	input		spi0_MISO;
-	output		spi0_MOSI;
-	output		spi0_SCLK;
-	output		spi0_SS_n;
-	input		usb_gpx_export;
-	input		usb_irq_export;
-	output		usb_rst_export;
+	output	[7:0]	reverb_export;
 	output		sdram_clk_clk;
 	output	[12:0]	sdram_wire_addr;
 	output	[1:0]	sdram_wire_ba;
@@ -55,4 +61,12 @@ module synthesizer_soc (
 	output	[1:0]	sdram_wire_dqm;
 	output		sdram_wire_ras_n;
 	output		sdram_wire_we_n;
+	input		spi0_MISO;
+	output		spi0_MOSI;
+	output		spi0_SCLK;
+	output		spi0_SS_n;
+	input		usb_gpx_export;
+	input		usb_irq_export;
+	output		usb_rst_export;
+	output	[7:0]	vibrato_export;
 endmodule

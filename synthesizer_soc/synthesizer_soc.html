@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2023.04.15.15:13:44</td>
+    <td class="l">2023.04.29.13:44:40</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -109,6 +109,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <a href="#module_leds_pio"><b>leds_pio</b>
      </a> altera_avalon_pio 18.1
      <br/>&#160;&#160;
+     <a href="#module_master_vol"><b>master_vol</b>
+     </a> altera_avalon_pio 18.1
+     <br/>&#160;&#160;
      <a href="#module_nios2_gen2_0"><b>nios2_gen2_0</b>
      </a> altera_nios2_gen2 18.1
      <br/>&#160;&#160;
@@ -126,6 +129,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <br/>&#160;&#160;
      <a href="#module_onchip_memory2_0"><b>onchip_memory2_0</b>
      </a> altera_avalon_onchip_memory2 18.1
+     <br/>&#160;&#160;
+     <a href="#module_reverb"><b>reverb</b>
+     </a> altera_avalon_pio 18.1
      <br/>&#160;&#160;
      <a href="#module_sdram"><b>sdram</b>
      </a> altera_avalon_new_sdram_controller 18.1
@@ -149,6 +155,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </a> altera_avalon_pio 18.1
      <br/>&#160;&#160;
      <a href="#module_usb_rst"><b>usb_rst</b>
+     </a> altera_avalon_pio 18.1
+     <br/>&#160;&#160;
+     <a href="#module_vibrato"><b>vibrato</b>
      </a> altera_avalon_pio 18.1</span>
    </div>
   </div>
@@ -176,8 +185,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001230</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001230</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001250</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001250</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -202,8 +211,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">avalon_jtag_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>080012b8</td>
-    <td class="addr"><span style="color:#989898">0x</span>080012b8</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012d8</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012d8</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -215,8 +224,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001210</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001210</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001230</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001230</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -228,12 +237,25 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001270</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001270</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001290</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001290</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
      <a href="#module_leds_pio"><b>leds_pio</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s1&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001240</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001240</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_master_vol"><b>master_vol</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -319,8 +341,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001280</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001280</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012a0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012a0</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_reverb"><b>reverb</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s1&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001210</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001210</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -345,8 +380,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">pll_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001290</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001290</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012b0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012b0</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -371,8 +406,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">control_slave&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>080012b0</td>
-    <td class="addr"><span style="color:#989898">0x</span>080012b0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012d0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080012d0</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -397,8 +432,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001250</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001250</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001270</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001270</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -410,8 +445,8 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001260</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001260</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001280</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001280</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -423,8 +458,21 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    </tr>
    <tr>
     <td class="slaveb">s1&#160;</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001240</td>
-    <td class="addr"><span style="color:#989898">0x</span>08001240</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001260</td>
+    <td class="addr"><span style="color:#989898">0x</span>08001260</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_vibrato"><b>vibrato</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s1&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>080011c0</td>
+    <td class="addr"><span style="color:#989898">0x</span>080011c0</td>
    </tr>
   </table>
   <a name="module_clk_0"> </a>
@@ -1578,6 +1626,216 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_master_vol"> </a>
+  <div>
+   <hr/>
+   <h2>master_vol</h2>altera_avalon_pio v18.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="11">master_vol</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">bitClearingEdgeCapReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">bitModifyingOutReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">captureEdge</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output</td>
+       </tr>
+       <tr>
+        <td class="parametername">edgeType</td>
+        <td class="parametervalue">RISING</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateIRQ</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irqType</td>
+        <td class="parametervalue">LEVEL</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDoTestBenchWiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDrivenValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">width</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_tri</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_out</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_in</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_do_test_bench_wiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_edge_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_irq_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BIT_CLEARING_EDGE_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIT_MODIFYING_OUTPUT_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CAPTURE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">DO_TEST_BENCH_WIRING</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DRIVEN_SIM_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">EDGE_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">FREQ</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_IN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_OUT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_TRI</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">IRQ_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
   <a name="module_nios2_gen2_0"> </a>
   <div>
    <hr/>
@@ -1590,7 +1848,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_clk_0">clk_0</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="136">nios2_gen2_0</td>
+      <td class="main" rowspan="157">nios2_gen2_0</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -2219,6 +2477,114 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td class="from">data_master&#160;&#160;</td>
       <td class="neighbor" rowspan="6">
        <a href="#module_note_vol_3">note_vol_3</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_master_vol">master_vol</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_reverb">reverb</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_vibrato">vibrato</a>
       </td>
      </tr>
      <tr>
@@ -2973,7 +3339,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">instSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x4000000' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x8000800' end='0x8001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_0.s1' start='0x8001040' end='0x8001080' type='altera_avalon_timer.s1' /&gt;&lt;slave name='i2c_0.csr' start='0x8001080' end='0x80010C0' type='altera_avalon_i2c.csr' /&gt;&lt;slave name='spi_0.spi_control_port' start='0x80010E0' end='0x8001100' type='altera_avalon_spi.spi_control_port' /&gt;&lt;slave name='note_vol_3.s1' start='0x80011D0' end='0x80011E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_2.s1' start='0x80011E0' end='0x80011F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_1.s1' start='0x80011F0' end='0x8001200' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_0.s1' start='0x8001200' end='0x8001210' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x8001210' end='0x8001220' type='altera_avalon_pio.s1' /&gt;&lt;slave name='leds_pio.s1' start='0x8001220' end='0x8001230' type='altera_avalon_pio.s1' /&gt;&lt;slave name='hex_digits_pio.s1' start='0x8001230' end='0x8001240' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_rst.s1' start='0x8001240' end='0x8001250' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_gpx.s1' start='0x8001250' end='0x8001260' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_irq.s1' start='0x8001260' end='0x8001270' type='altera_avalon_pio.s1' /&gt;&lt;slave name='keycode.s1' start='0x8001270' end='0x8001280' type='altera_avalon_pio.s1' /&gt;&lt;slave name='onchip_memory2_0.s1' start='0x8001280' end='0x8001290' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='sdrampll.pll_slave' start='0x8001290' end='0x80012A0' type='altpll.pll_slave' /&gt;&lt;slave name='sysid_qsys_0.control_slave' start='0x80012B0' end='0x80012B8' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x80012B8' end='0x80012C0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x4000000' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x8000800' end='0x8001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_0.s1' start='0x8001040' end='0x8001080' type='altera_avalon_timer.s1' /&gt;&lt;slave name='i2c_0.csr' start='0x8001080' end='0x80010C0' type='altera_avalon_i2c.csr' /&gt;&lt;slave name='spi_0.spi_control_port' start='0x80010E0' end='0x8001100' type='altera_avalon_spi.spi_control_port' /&gt;&lt;slave name='vibrato.s1' start='0x80011C0' end='0x80011D0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_3.s1' start='0x80011D0' end='0x80011E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_2.s1' start='0x80011E0' end='0x80011F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_1.s1' start='0x80011F0' end='0x8001200' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_0.s1' start='0x8001200' end='0x8001210' type='altera_avalon_pio.s1' /&gt;&lt;slave name='reverb.s1' start='0x8001210' end='0x8001220' type='altera_avalon_pio.s1' /&gt;&lt;slave name='master_vol.s1' start='0x8001220' end='0x8001230' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x8001230' end='0x8001240' type='altera_avalon_pio.s1' /&gt;&lt;slave name='leds_pio.s1' start='0x8001240' end='0x8001250' type='altera_avalon_pio.s1' /&gt;&lt;slave name='hex_digits_pio.s1' start='0x8001250' end='0x8001260' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_rst.s1' start='0x8001260' end='0x8001270' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_gpx.s1' start='0x8001270' end='0x8001280' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_irq.s1' start='0x8001280' end='0x8001290' type='altera_avalon_pio.s1' /&gt;&lt;slave name='keycode.s1' start='0x8001290' end='0x80012A0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='onchip_memory2_0.s1' start='0x80012A0' end='0x80012B0' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='sdrampll.pll_slave' start='0x80012B0' end='0x80012C0' type='altpll.pll_slave' /&gt;&lt;slave name='sysid_qsys_0.control_slave' start='0x80012D0' end='0x80012D8' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x80012D8' end='0x80012E0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">faSlaveMapParam</td>
@@ -2981,7 +3347,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x4000000' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x8000800' end='0x8001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_0.s1' start='0x8001040' end='0x8001080' type='altera_avalon_timer.s1' /&gt;&lt;slave name='i2c_0.csr' start='0x8001080' end='0x80010C0' type='altera_avalon_i2c.csr' /&gt;&lt;slave name='spi_0.spi_control_port' start='0x80010E0' end='0x8001100' type='altera_avalon_spi.spi_control_port' /&gt;&lt;slave name='note_vol_3.s1' start='0x80011D0' end='0x80011E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_2.s1' start='0x80011E0' end='0x80011F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_1.s1' start='0x80011F0' end='0x8001200' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_0.s1' start='0x8001200' end='0x8001210' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x8001210' end='0x8001220' type='altera_avalon_pio.s1' /&gt;&lt;slave name='leds_pio.s1' start='0x8001220' end='0x8001230' type='altera_avalon_pio.s1' /&gt;&lt;slave name='hex_digits_pio.s1' start='0x8001230' end='0x8001240' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_rst.s1' start='0x8001240' end='0x8001250' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_gpx.s1' start='0x8001250' end='0x8001260' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_irq.s1' start='0x8001260' end='0x8001270' type='altera_avalon_pio.s1' /&gt;&lt;slave name='keycode.s1' start='0x8001270' end='0x8001280' type='altera_avalon_pio.s1' /&gt;&lt;slave name='onchip_memory2_0.s1' start='0x8001280' end='0x8001290' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='sdrampll.pll_slave' start='0x8001290' end='0x80012A0' type='altpll.pll_slave' /&gt;&lt;slave name='sysid_qsys_0.control_slave' start='0x80012B0' end='0x80012B8' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x80012B8' end='0x80012C0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='sdram.s1' start='0x4000000' end='0x8000000' type='altera_avalon_new_sdram_controller.s1' /&gt;&lt;slave name='nios2_gen2_0.debug_mem_slave' start='0x8000800' end='0x8001000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='timer_0.s1' start='0x8001040' end='0x8001080' type='altera_avalon_timer.s1' /&gt;&lt;slave name='i2c_0.csr' start='0x8001080' end='0x80010C0' type='altera_avalon_i2c.csr' /&gt;&lt;slave name='spi_0.spi_control_port' start='0x80010E0' end='0x8001100' type='altera_avalon_spi.spi_control_port' /&gt;&lt;slave name='vibrato.s1' start='0x80011C0' end='0x80011D0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_3.s1' start='0x80011D0' end='0x80011E0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_2.s1' start='0x80011E0' end='0x80011F0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_1.s1' start='0x80011F0' end='0x8001200' type='altera_avalon_pio.s1' /&gt;&lt;slave name='note_vol_0.s1' start='0x8001200' end='0x8001210' type='altera_avalon_pio.s1' /&gt;&lt;slave name='reverb.s1' start='0x8001210' end='0x8001220' type='altera_avalon_pio.s1' /&gt;&lt;slave name='master_vol.s1' start='0x8001220' end='0x8001230' type='altera_avalon_pio.s1' /&gt;&lt;slave name='key.s1' start='0x8001230' end='0x8001240' type='altera_avalon_pio.s1' /&gt;&lt;slave name='leds_pio.s1' start='0x8001240' end='0x8001250' type='altera_avalon_pio.s1' /&gt;&lt;slave name='hex_digits_pio.s1' start='0x8001250' end='0x8001260' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_rst.s1' start='0x8001260' end='0x8001270' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_gpx.s1' start='0x8001270' end='0x8001280' type='altera_avalon_pio.s1' /&gt;&lt;slave name='usb_irq.s1' start='0x8001280' end='0x8001290' type='altera_avalon_pio.s1' /&gt;&lt;slave name='keycode.s1' start='0x8001290' end='0x80012A0' type='altera_avalon_pio.s1' /&gt;&lt;slave name='onchip_memory2_0.s1' start='0x80012A0' end='0x80012B0' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='sdrampll.pll_slave' start='0x80012B0' end='0x80012C0' type='altpll.pll_slave' /&gt;&lt;slave name='sysid_qsys_0.control_slave' start='0x80012D0' end='0x80012D8' type='altera_avalon_sysid_qsys.control_slave' /&gt;&lt;slave name='jtag_uart_0.avalon_jtag_slave' start='0x80012D8' end='0x80012E0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -4319,6 +4685,216 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_reverb"> </a>
+  <div>
+   <hr/>
+   <h2>reverb</h2>altera_avalon_pio v18.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="11">reverb</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">bitClearingEdgeCapReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">bitModifyingOutReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">captureEdge</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output</td>
+       </tr>
+       <tr>
+        <td class="parametername">edgeType</td>
+        <td class="parametervalue">RISING</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateIRQ</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irqType</td>
+        <td class="parametervalue">LEVEL</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDoTestBenchWiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDrivenValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">width</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_tri</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_out</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_in</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_do_test_bench_wiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_edge_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_irq_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BIT_CLEARING_EDGE_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIT_MODIFYING_OUTPUT_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CAPTURE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">DO_TEST_BENCH_WIRING</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DRIVEN_SIM_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">EDGE_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">FREQ</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_IN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_OUT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_TRI</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">IRQ_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
   <a name="module_sdram"> </a>
   <div>
    <hr/>
@@ -5635,7 +6211,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timestamp</td>
-        <td class="parametervalue">1681589624</td>
+        <td class="parametervalue">1682793879</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>
@@ -5660,7 +6236,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">TIMESTAMP</td>
-        <td class="parametervalue">1681589624</td>
+        <td class="parametervalue">1682793879</td>
        </tr>
       </table>
      </td>
@@ -6491,10 +7067,220 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_vibrato"> </a>
+  <div>
+   <hr/>
+   <h2>vibrato</h2>altera_avalon_pio v18.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_nios2_gen2_0">nios2_gen2_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="11">vibrato</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">instruction_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">bitClearingEdgeCapReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">bitModifyingOutReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">captureEdge</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output</td>
+       </tr>
+       <tr>
+        <td class="parametername">edgeType</td>
+        <td class="parametervalue">RISING</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateIRQ</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irqType</td>
+        <td class="parametervalue">LEVEL</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDoTestBenchWiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDrivenValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">width</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_tri</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_out</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_in</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_do_test_bench_wiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_edge_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_irq_type</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">derived_has_irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">BIT_CLEARING_EDGE_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIT_MODIFYING_OUTPUT_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CAPTURE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">DO_TEST_BENCH_WIRING</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DRIVEN_SIM_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">EDGE_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">FREQ</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_IN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_OUT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_TRI</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">IRQ_TYPE</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_VALUE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.01 seconds</td>
-    <td class="r">rendering took 0.09 seconds</td>
+    <td class="r">rendering took 0.08 seconds</td>
    </tr>
   </table>
  </body>

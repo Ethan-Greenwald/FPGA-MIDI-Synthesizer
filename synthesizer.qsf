@@ -252,6 +252,7 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_LITE_Defa
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE10_LITE_Default -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -entity DE10_LITE_Default -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Default -section_id Top
+set_global_assignment -name TEXT_FILE MIDI_freq_to_period.txt
 set_global_assignment -name QIP_FILE sin_rom.qip
 set_global_assignment -name QIP_FILE rom.qip
 set_global_assignment -name QIP_FILE full_sin_rom.qip

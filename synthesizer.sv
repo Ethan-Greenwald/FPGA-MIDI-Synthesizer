@@ -126,14 +126,14 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 	
 	logic [23:0] sample_0, sample_1, sample_2, sample_3, output_sample;	//connections for generating and mixing samples
 	logic [15:0] note_vol_0, note_vol_1, note_vol_2, note_vol_3;			//connection to NIOS-II
-		
+	logic [7:0] reverb, master_vol, vibrato;
 	
-	waveform_generator note0( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_0), .sample(sample_0));
-	waveform_generator note1( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_1), .sample(sample_1));
-	waveform_generator note2( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_2), .sample(sample_2));
-	waveform_generator note3( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_3), .sample(sample_3));
+	waveform_generator note0( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .vibrato(vibrato), .note_vol(note_vol_0), .sample(sample_0));
+	waveform_generator note1( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .vibrato(vibrato), .note_vol(note_vol_1), .sample(sample_1));
+	waveform_generator note2( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .vibrato(vibrato), .note_vol(note_vol_2), .sample(sample_2));
+	waveform_generator note3( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .vibrato(vibrato), .note_vol(note_vol_3), .sample(sample_3));
 	
-	mixer mix(.clk(MAX10_CLK1_50), .master_vol(50), .sample_0(sample_0), .sample_1(sample_1), .sample_2(sample_2), .sample_3(sample_3), .mixed_sample(output_sample));
+	mixer mix(.clk(MAX10_CLK1_50), .master_vol(master_vol), .sample_0(sample_0), .sample_1(sample_1), .sample_2(sample_2), .sample_3(sample_3), .mixed_sample(output_sample));
 	
 	/* Display note on hex displays */
 	logic [3:0] note_name, octave, partial;
@@ -170,6 +170,9 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 		.note_vol_1_export(note_vol_1),
 		.note_vol_2_export(note_vol_2),
 		.note_vol_3_export(note_vol_3),
+		.master_vol_export(master_vol),
+		.reverb_export(reverb),
+		.vibrato_export(vibrato),
 		
 		//SDRAM
 		.sdram_clk_clk(DRAM_CLK),                            //clk_sdram.clk

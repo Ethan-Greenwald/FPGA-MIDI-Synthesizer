@@ -13,11 +13,13 @@ module synthesizer_soc (
 		input  wire [1:0]  key_external_connection_export, // key_external_connection.export
 		output wire [7:0]  keycode_export,                 //                 keycode.export
 		output wire [13:0] leds_export,                    //                    leds.export
+		output wire [7:0]  master_vol_export,              //              master_vol.export
 		output wire [15:0] note_vol_0_export,              //              note_vol_0.export
 		output wire [15:0] note_vol_1_export,              //              note_vol_1.export
 		output wire [15:0] note_vol_2_export,              //              note_vol_2.export
 		output wire [15:0] note_vol_3_export,              //              note_vol_3.export
 		input  wire        reset_reset_n,                  //                   reset.reset_n
+		output wire [7:0]  reverb_export,                  //                  reverb.export
 		output wire        sdram_clk_clk,                  //               sdram_clk.clk
 		output wire [12:0] sdram_wire_addr,                //              sdram_wire.addr
 		output wire [1:0]  sdram_wire_ba,                  //                        .ba
@@ -34,7 +36,8 @@ module synthesizer_soc (
 		output wire        spi0_SS_n,                      //                        .SS_n
 		input  wire        usb_gpx_export,                 //                 usb_gpx.export
 		input  wire        usb_irq_export,                 //                 usb_irq.export
-		output wire        usb_rst_export                  //                 usb_rst.export
+		output wire        usb_rst_export,                 //                 usb_rst.export
+		output wire [7:0]  vibrato_export                  //                 vibrato.export
 	);
 
 	wire         sdrampll_c0_clk;                                             // sdrampll:c0 -> [mm_interconnect_0:sdrampll_c0_clk, rst_controller_002:clk, sdram:clk]
@@ -144,6 +147,21 @@ module synthesizer_soc (
 	wire   [1:0] mm_interconnect_0_note_vol_3_s1_address;                     // mm_interconnect_0:note_vol_3_s1_address -> note_vol_3:address
 	wire         mm_interconnect_0_note_vol_3_s1_write;                       // mm_interconnect_0:note_vol_3_s1_write -> note_vol_3:write_n
 	wire  [31:0] mm_interconnect_0_note_vol_3_s1_writedata;                   // mm_interconnect_0:note_vol_3_s1_writedata -> note_vol_3:writedata
+	wire         mm_interconnect_0_master_vol_s1_chipselect;                  // mm_interconnect_0:master_vol_s1_chipselect -> master_vol:chipselect
+	wire  [31:0] mm_interconnect_0_master_vol_s1_readdata;                    // master_vol:readdata -> mm_interconnect_0:master_vol_s1_readdata
+	wire   [1:0] mm_interconnect_0_master_vol_s1_address;                     // mm_interconnect_0:master_vol_s1_address -> master_vol:address
+	wire         mm_interconnect_0_master_vol_s1_write;                       // mm_interconnect_0:master_vol_s1_write -> master_vol:write_n
+	wire  [31:0] mm_interconnect_0_master_vol_s1_writedata;                   // mm_interconnect_0:master_vol_s1_writedata -> master_vol:writedata
+	wire         mm_interconnect_0_reverb_s1_chipselect;                      // mm_interconnect_0:reverb_s1_chipselect -> reverb:chipselect
+	wire  [31:0] mm_interconnect_0_reverb_s1_readdata;                        // reverb:readdata -> mm_interconnect_0:reverb_s1_readdata
+	wire   [1:0] mm_interconnect_0_reverb_s1_address;                         // mm_interconnect_0:reverb_s1_address -> reverb:address
+	wire         mm_interconnect_0_reverb_s1_write;                           // mm_interconnect_0:reverb_s1_write -> reverb:write_n
+	wire  [31:0] mm_interconnect_0_reverb_s1_writedata;                       // mm_interconnect_0:reverb_s1_writedata -> reverb:writedata
+	wire         mm_interconnect_0_vibrato_s1_chipselect;                     // mm_interconnect_0:vibrato_s1_chipselect -> vibrato:chipselect
+	wire  [31:0] mm_interconnect_0_vibrato_s1_readdata;                       // vibrato:readdata -> mm_interconnect_0:vibrato_s1_readdata
+	wire   [1:0] mm_interconnect_0_vibrato_s1_address;                        // mm_interconnect_0:vibrato_s1_address -> vibrato:address
+	wire         mm_interconnect_0_vibrato_s1_write;                          // mm_interconnect_0:vibrato_s1_write -> vibrato:write_n
+	wire  [31:0] mm_interconnect_0_vibrato_s1_writedata;                      // mm_interconnect_0:vibrato_s1_writedata -> vibrato:writedata
 	wire         mm_interconnect_0_spi_0_spi_control_port_chipselect;         // mm_interconnect_0:spi_0_spi_control_port_chipselect -> spi_0:spi_select
 	wire  [15:0] mm_interconnect_0_spi_0_spi_control_port_readdata;           // spi_0:data_to_cpu -> mm_interconnect_0:spi_0_spi_control_port_readdata
 	wire   [2:0] mm_interconnect_0_spi_0_spi_control_port_address;            // mm_interconnect_0:spi_0_spi_control_port_address -> spi_0:mem_addr
@@ -155,7 +173,7 @@ module synthesizer_soc (
 	wire         irq_mapper_receiver2_irq;                                    // timer_0:irq -> irq_mapper:receiver2_irq
 	wire         irq_mapper_receiver3_irq;                                    // spi_0:irq -> irq_mapper:receiver3_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                        // irq_mapper:sender_irq -> nios2_gen2_0:irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [hex_digits_pio:reset_n, i2c_0:rst_n, irq_mapper:reset, jtag_uart_0:rst_n, keycode:reset_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, note_vol_0:reset_n, note_vol_1:reset_n, note_vol_2:reset_n, note_vol_3:reset_n, onchip_memory2_0:reset, rst_translator:in_reset, sdrampll:reset, sysid_qsys_0:reset_n, usb_gpx:reset_n, usb_irq:reset_n, usb_rst:reset_n]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [hex_digits_pio:reset_n, i2c_0:rst_n, irq_mapper:reset, jtag_uart_0:rst_n, keycode:reset_n, master_vol:reset_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, note_vol_0:reset_n, note_vol_1:reset_n, note_vol_2:reset_n, note_vol_3:reset_n, onchip_memory2_0:reset, reverb:reset_n, rst_translator:in_reset, sdrampll:reset, sysid_qsys_0:reset_n, usb_gpx:reset_n, usb_irq:reset_n, usb_rst:reset_n, vibrato:reset_n]
 	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         nios2_gen2_0_debug_reset_request_reset;                      // nios2_gen2_0:debug_reset_request -> [rst_controller:reset_in1, rst_controller_002:reset_in1]
 	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [key:reset_n, leds_pio:reset_n, mm_interconnect_0:timer_0_reset_reset_bridge_in_reset_reset, spi_0:reset_n, timer_0:reset_n]
@@ -238,6 +256,17 @@ module synthesizer_soc (
 		.chipselect (mm_interconnect_0_leds_pio_s1_chipselect), //                    .chipselect
 		.readdata   (mm_interconnect_0_leds_pio_s1_readdata),   //                    .readdata
 		.out_port   (leds_export)                               // external_connection.export
+	);
+
+	synthesizer_soc_keycode master_vol (
+		.clk        (clk_clk),                                    //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),            //               reset.reset_n
+		.address    (mm_interconnect_0_master_vol_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_master_vol_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_master_vol_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_master_vol_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_master_vol_s1_readdata),   //                    .readdata
+		.out_port   (master_vol_export)                           // external_connection.export
 	);
 
 	synthesizer_soc_nios2_gen2_0 nios2_gen2_0 (
@@ -325,6 +354,17 @@ module synthesizer_soc (
 		.reset      (rst_controller_reset_out_reset),                   // reset1.reset
 		.reset_req  (rst_controller_reset_out_reset_req),               //       .reset_req
 		.freeze     (1'b0)                                              // (terminated)
+	);
+
+	synthesizer_soc_keycode reverb (
+		.clk        (clk_clk),                                //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),        //               reset.reset_n
+		.address    (mm_interconnect_0_reverb_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_reverb_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_reverb_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_reverb_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_reverb_s1_readdata),   //                    .readdata
+		.out_port   (reverb_export)                           // external_connection.export
 	);
 
 	synthesizer_soc_sdram sdram (
@@ -438,6 +478,17 @@ module synthesizer_soc (
 		.out_port   (usb_rst_export)                           // external_connection.export
 	);
 
+	synthesizer_soc_keycode vibrato (
+		.clk        (clk_clk),                                 //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),         //               reset.reset_n
+		.address    (mm_interconnect_0_vibrato_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_vibrato_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_vibrato_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_vibrato_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_vibrato_s1_readdata),   //                    .readdata
+		.out_port   (vibrato_export)                           // external_connection.export
+	);
+
 	synthesizer_soc_mm_interconnect_0 mm_interconnect_0 (
 		.clk_0_clk_clk                                  (clk_clk),                                                     //                                clk_0_clk.clk
 		.sdrampll_c0_clk                                (sdrampll_c0_clk),                                             //                              sdrampll_c0.clk
@@ -485,6 +536,11 @@ module synthesizer_soc (
 		.leds_pio_s1_readdata                           (mm_interconnect_0_leds_pio_s1_readdata),                      //                                         .readdata
 		.leds_pio_s1_writedata                          (mm_interconnect_0_leds_pio_s1_writedata),                     //                                         .writedata
 		.leds_pio_s1_chipselect                         (mm_interconnect_0_leds_pio_s1_chipselect),                    //                                         .chipselect
+		.master_vol_s1_address                          (mm_interconnect_0_master_vol_s1_address),                     //                            master_vol_s1.address
+		.master_vol_s1_write                            (mm_interconnect_0_master_vol_s1_write),                       //                                         .write
+		.master_vol_s1_readdata                         (mm_interconnect_0_master_vol_s1_readdata),                    //                                         .readdata
+		.master_vol_s1_writedata                        (mm_interconnect_0_master_vol_s1_writedata),                   //                                         .writedata
+		.master_vol_s1_chipselect                       (mm_interconnect_0_master_vol_s1_chipselect),                  //                                         .chipselect
 		.nios2_gen2_0_debug_mem_slave_address           (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_address),      //             nios2_gen2_0_debug_mem_slave.address
 		.nios2_gen2_0_debug_mem_slave_write             (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_write),        //                                         .write
 		.nios2_gen2_0_debug_mem_slave_read              (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_read),         //                                         .read
@@ -520,6 +576,11 @@ module synthesizer_soc (
 		.onchip_memory2_0_s1_byteenable                 (mm_interconnect_0_onchip_memory2_0_s1_byteenable),            //                                         .byteenable
 		.onchip_memory2_0_s1_chipselect                 (mm_interconnect_0_onchip_memory2_0_s1_chipselect),            //                                         .chipselect
 		.onchip_memory2_0_s1_clken                      (mm_interconnect_0_onchip_memory2_0_s1_clken),                 //                                         .clken
+		.reverb_s1_address                              (mm_interconnect_0_reverb_s1_address),                         //                                reverb_s1.address
+		.reverb_s1_write                                (mm_interconnect_0_reverb_s1_write),                           //                                         .write
+		.reverb_s1_readdata                             (mm_interconnect_0_reverb_s1_readdata),                        //                                         .readdata
+		.reverb_s1_writedata                            (mm_interconnect_0_reverb_s1_writedata),                       //                                         .writedata
+		.reverb_s1_chipselect                           (mm_interconnect_0_reverb_s1_chipselect),                      //                                         .chipselect
 		.sdram_s1_address                               (mm_interconnect_0_sdram_s1_address),                          //                                 sdram_s1.address
 		.sdram_s1_write                                 (mm_interconnect_0_sdram_s1_write),                            //                                         .write
 		.sdram_s1_read                                  (mm_interconnect_0_sdram_s1_read),                             //                                         .read
@@ -555,7 +616,12 @@ module synthesizer_soc (
 		.usb_rst_s1_write                               (mm_interconnect_0_usb_rst_s1_write),                          //                                         .write
 		.usb_rst_s1_readdata                            (mm_interconnect_0_usb_rst_s1_readdata),                       //                                         .readdata
 		.usb_rst_s1_writedata                           (mm_interconnect_0_usb_rst_s1_writedata),                      //                                         .writedata
-		.usb_rst_s1_chipselect                          (mm_interconnect_0_usb_rst_s1_chipselect)                      //                                         .chipselect
+		.usb_rst_s1_chipselect                          (mm_interconnect_0_usb_rst_s1_chipselect),                     //                                         .chipselect
+		.vibrato_s1_address                             (mm_interconnect_0_vibrato_s1_address),                        //                               vibrato_s1.address
+		.vibrato_s1_write                               (mm_interconnect_0_vibrato_s1_write),                          //                                         .write
+		.vibrato_s1_readdata                            (mm_interconnect_0_vibrato_s1_readdata),                       //                                         .readdata
+		.vibrato_s1_writedata                           (mm_interconnect_0_vibrato_s1_writedata),                      //                                         .writedata
+		.vibrato_s1_chipselect                          (mm_interconnect_0_vibrato_s1_chipselect)                      //                                         .chipselect
 	);
 
 	synthesizer_soc_irq_mapper irq_mapper (
