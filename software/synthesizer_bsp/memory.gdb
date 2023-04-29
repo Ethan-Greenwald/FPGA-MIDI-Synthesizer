@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'synthesizer_soc'
 # SOPC Builder design path: ../../synthesizer_soc.sopcinfo
 #
-# Generated: Sat Apr 15 15:18:12 CDT 2023
+# Generated: Mon Apr 24 17:34:29 CDT 2023
 
 # DO NOT MODIFY THIS FILE
 #
@@ -50,4 +50,4 @@
 memory 0x4000000 0x8000000 cache
 
 # onchip_memory2_0
-memory 0x8001280 0x8001290 cache
+memory 0x8001300 0x8001310 cache

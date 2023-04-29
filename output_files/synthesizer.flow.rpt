@@ -1,5 +1,5 @@
 Flow report for synthesizer
-Mon Apr 17 08:53:42 2023
+Mon Apr 24 20:41:48 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,22 +40,22 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Apr 17 08:53:42 2023       ;
+; Flow Status                        ; Successful - Mon Apr 24 20:41:48 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; synthesizer                                 ;
 ; Top-level Entity Name              ; synthesizer                                 ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 18,550 / 49,760 ( 37 % )                    ;
-;     Total combinational functions  ; 17,825 / 49,760 ( 36 % )                    ;
-;     Dedicated logic registers      ; 3,206 / 49,760 ( 6 % )                      ;
-; Total registers                    ; 3275                                        ;
+; Total logic elements               ; 19,010 / 49,760 ( 38 % )                    ;
+;     Total combinational functions  ; 18,249 / 49,760 ( 37 % )                    ;
+;     Dedicated logic registers      ; 3,386 / 49,760 ( 7 % )                      ;
+; Total registers                    ; 3455                                        ;
 ; Total pins                         ; 141 / 360 ( 39 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 11,464 / 1,677,312 ( < 1 % )                ;
-; Embedded Multiplier 9-bit elements ; 39 / 288 ( 14 % )                           ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
+; Embedded Multiplier 9-bit elements ; 43 / 288 ( 15 % )                           ;
+; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
 ; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/15/2023 16:15:44 ;
+; Start date & time ; 04/24/2023 20:39:42 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; synthesizer         ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------------------+---------------+-------------------+----------------+
 ; Assignment Name                     ; Value                                                             ; Default Value ; Entity Name       ; Section Id     ;
 +-------------------------------------+-------------------------------------------------------------------+---------------+-------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 136685079871981.168159334411568                                   ; --            ; --                ; --             ;
+; COMPILER_SIGNATURE_ID               ; 264086602079652.168238678232452                                   ; --            ; --                ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                 ; --            ; --                ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                   ; <None>        ; --                ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                              ; --            ; --                ; eda_simulation ;
@@ -103,7 +103,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                      ; --            ; --                ; --             ;
 ; SLD_FILE                            ; synthesizer_soc/synthesis/synthesizer_soc.regmap                  ; --            ; --                ; --             ;
 ; SLD_FILE                            ; synthesizer_soc/synthesis/synthesizer_soc.debuginfo               ; --            ; --                ; --             ;
-; SLD_INFO                            ; QSYS_NAME synthesizer_soc HAS_SOPCINFO 1 GENERATION_ID 1681589624 ; --            ; synthesizer_soc   ; --             ;
+; SLD_INFO                            ; QSYS_NAME synthesizer_soc HAS_SOPCINFO 1 GENERATION_ID 1682386727 ; --            ; synthesizer_soc   ; --             ;
 ; SOPCINFO_FILE                       ; synthesizer_soc/synthesis/../../synthesizer_soc.sopcinfo          ; --            ; --                ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                ; --            ; --                ; --             ;
 +-------------------------------------+-------------------------------------------------------------------+---------------+-------------------+----------------+
@@ -114,12 +114,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:59     ; 1.0                     ; 5051 MB             ; 00:01:16                           ;
-; Fitter               ; 1:16:36:08   ; 1.0                     ; 5799 MB             ; 00:02:58                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4739 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:15     ; 2.5                     ; 4975 MB             ; 00:00:32                           ;
-; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4825 MB             ; 00:00:05                           ;
-; Total                ; 1:16:37:32   ; --                      ; --                  ; 00:04:55                           ;
+; Analysis & Synthesis ; 00:00:56     ; 1.0                     ; 5121 MB             ; 00:01:12                           ;
+; Fitter               ; 00:00:43     ; 1.6                     ; 6330 MB             ; 00:01:48                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4745 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:08     ; 3.0                     ; 5025 MB             ; 00:00:21                           ;
+; EDA Netlist Writer   ; 00:00:04     ; 1.0                     ; 4832 MB             ; 00:00:04                           ;
+; Total                ; 00:01:55     ; --                      ; --                  ; 00:03:28                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -128,11 +128,11 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; EthanLaptop      ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; EthanLaptop      ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; EthanLaptop      ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; EthanLaptop      ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; EthanLaptop      ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; Ethans-Desktop   ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; Ethans-Desktop   ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; Ethans-Desktop   ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; Ethans-Desktop   ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Ethans-Desktop   ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

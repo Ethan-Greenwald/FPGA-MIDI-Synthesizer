@@ -121,6 +121,19 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 	assign ARDUINO_IO[14] = i2c_sda_oe ? 1'b0 : 1'bz;
 	
 	
+	/* Display note on hex displays */
+	logic [3:0] note_name, octave, partial;
+	note_table notes(.MIDI_freq(note_vol_0[14:8]), .note_name, .octave, .partial);
+	
+	HexDriver hex_driver2 (note_name, HEX2[6:0]);
+	assign HEX2[7] = 1'b1;
+	
+	HexDriver hex_driver1 (partial, HEX1[6:0]);
+	assign HEX1[7] = 1'b1;
+	
+	HexDriver hex_driver0 (octave, HEX0[6:0]);
+	assign HEX0[7] = 1'b1;	
+	
 	
 	/* ############################ Wave Generation etc. ############################ */
 	
@@ -134,20 +147,8 @@ logic Reset_h, vssig, blank, sync, VGA_Clk;
 	waveform_generator note2( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_2), .vibrato_level(vibrato_level), .sample(sample_2));
 	waveform_generator note3( .clk(MAX10_CLK1_50), .reset(Reset_h), .wave_select(SW[1:0]), .note_vol(note_vol_3), .vibrato_level(vibrato_level), .sample(sample_3));
 	
-	mixer mix(.clk(MAX10_CLK1_50), .master_vol(master_vol), .reverb_strength(reverb_strength), .sample_0(sample_0), .sample_1(sample_1), .sample_2(sample_2), .sample_3(sample_3), .mixed_sample(output_sample));
+	mixer mix(.clk(MAX10_CLK1_50), .sample_clk(ARDUINO_IO[4]), .master_vol(master_vol), .reverb_strength(reverb_strength), .sample_0(sample_0), .sample_1(sample_1), .sample_2(sample_2), .sample_3(sample_3), .mixed_sample(output_sample));
 	
-	/* Display note on hex displays */
-	logic [3:0] note_name, octave, partial;
-	note_table notes(.MIDI_freq(note_vol_0[14:8]), .note_name, .octave, .partial);
-	
-	HexDriver hex_driver2 (note_name, HEX2[6:0]);
-	assign HEX2[7] = 1'b1;
-	
-	HexDriver hex_driver1 (partial, HEX1[6:0]);
-	assign HEX1[7] = 1'b1;
-	
-	HexDriver hex_driver0 (octave, HEX0[6:0]);
-	assign HEX0[7] = 1'b1;	
 
 	
 	I2S_interface i2s( .LRCLK(ARDUINO_IO[4]), .SCLK(ARDUINO_IO[5]), .data_in(output_sample), .SDATA(ARDUINO_IO[2]) );

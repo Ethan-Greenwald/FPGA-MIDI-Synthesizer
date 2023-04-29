@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="045ae90ada432d58df92"/>
+    <hash md5_digest_80b="99f0410e495b9939549d"/>
   </project>
   <file_info>
     <file device="10M50DAF484C7G" path="synthesizer.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="synthesizer_soc:comb_44" name="comb_44">
       <assignment_values>
-        <assignment_value text="QSYS_NAME synthesizer_soc HAS_SOPCINFO 1 GENERATION_ID 1681589624"/>
+        <assignment_value text="QSYS_NAME synthesizer_soc HAS_SOPCINFO 1 GENERATION_ID 1682386727"/>
       </assignment_values>
       <parameters/>
     </sld_info>
