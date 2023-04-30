@@ -6,7 +6,7 @@ module triangle_wave_generator( input clk, reset, input [22:0] period, input [6:
 	logic updown; //1 -> up; 0 -> down;
 	
 	assign init = period/2; 	//period/2 [clock cycles]
-	assign increment = 'd33554431/init;						//(max-min)/(period/2) = ((2^24 - 1) + (2^24))/init
+	assign increment = 'd33550431/init;//d33554431 = (max-min)/(period/2) = ((2^24 - 1) + (2^24))/init
 	//inc = 590 for 440 Hz; init = 56,818
 	//end value = 16,745,404 < 2^{24} - 1
 	

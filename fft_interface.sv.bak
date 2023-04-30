@@ -1,0 +1,15 @@
+module fft_interface(input clk, input [23:0] sample, );
+
+	/*
+		SOP and EOP are for the 256-length packet
+		Send a new 24-bit sample each clock cycle into FFT
+		sink_valid = 1
+		sink_error = 00
+		inverse = 0
+		sink_imag = 0
+		sink_real = sample
+		source_ready = 1
+		fftpts_in = 256
+	*/
+	
+endmodule

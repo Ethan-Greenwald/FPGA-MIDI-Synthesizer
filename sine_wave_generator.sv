@@ -2,11 +2,11 @@ module sine_wave_generator(input clk, reset, input [22:0] period, input [6:0] vo
 
     logic [10:0] cycles_to_inc, count;
 	 logic [23:0] local_val;
-    logic [11:0] phase;
+    logic [12:0] phase;
 	 
-	 assign value = local_val;//(local_val * volume) >> 7;
+	 assign value = (local_val * volume)/128;
 	 
-    assign cycles_to_inc = period/16384;// >> 12; // divide by 4096
+    assign cycles_to_inc = (period-400)/8192;// >> 12; // divide by 4096
 
 	 sine_rom ROM( .address(phase), .clock(clk), .q(local_val));
 

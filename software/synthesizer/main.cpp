@@ -37,7 +37,7 @@ void toBinary(uint8_t a)
 }
 
 extern "C" {
-        #include "sgtl5000_test.h"
+	#include "sgtl5000_test.h"
 }
 
 int main() {
@@ -74,8 +74,10 @@ int main() {
 	clock_t note_clocks[NUM_NOTES];
 	int available_idx;
 	bool note_used[NUM_NOTES] = {false};
+	bool note_released[NUM_NOTES] = {false};
 	bool first_note = true;
 	bool muted = false;
+	bool foundNote = false;
 
 	while(1){
 		Usb.Task();
@@ -97,12 +99,24 @@ int main() {
 							/* Find first available note_vol */
 							available_idx = -1;
 							for(int i = 0; i < NUM_NOTES; i++){
-								if(!note_used[i]){
+								if(note_released[i] && ((*(note_vol_array[i]) >> 8) == unsigned(MIDI_packet[1]))){	//if note is decaying after release
 									available_idx = i;
 									note_used[i] = true;
+									note_released[i] = false;
+									foundNote = true;
 									break;
 								}
 							}
+							if(!foundNote){
+								for(int i = 0; i < NUM_NOTES; i++){
+									if(!note_used[i]){
+										available_idx = i;
+										note_used[i] = true;
+										break;
+									}
+								}
+							}
+							foundNote = false;
 							/* If a note_vol is available, write to it*/
 							if(available_idx != -1){
 								*(note_vol_array[available_idx]) = (MIDI_packet[1] << 8) + MIDI_packet[2];
@@ -114,8 +128,14 @@ int main() {
 					case 8:		//Note OFF
 						for(int i = 0; i < NUM_NOTES; i++){    								//iterate over all note_vols
 							if((*(note_vol_array[i]) >> 8) == unsigned(MIDI_packet[1])){  	//we've found the note to turn off
-								*(note_vol_array[i]) = 0;                  					//note turned off
-								note_used[i] = false;										//reset flag
+								if(release_time != 0){
+									note_released[i] = true;
+									note_clocks[i] = clock();
+								}
+								else{
+									*(note_vol_array[i]) = 0;                  					//note turned off
+									note_used[i] = false;										//reset flag
+								}
 								break;
 							}
 						}
@@ -133,15 +153,18 @@ int main() {
 						/* Volume wheel */
 						case 0x01:
 							*(master_vol) = unsigned(MIDI_packet[2]);
+							printf("Master vol = %d\n", *master_vol);
 							break;
 
 						/* Knobs */
 						case 0x14:	//Reverb
 							*(reverb) = unsigned(MIDI_packet[2]);
+							printf("Reverb = %d\n", *reverb);
 							break;
 
 						case 0x15:	//Release time
 							release_time = unsigned(MIDI_packet[2]);
+							printf("Release time = %d\n", release_time);
 							break;
 
 						case 0x16:	//Decay time
@@ -181,6 +204,21 @@ int main() {
 			} while (size > 0);
 		}
 		for(int i = 0; i < NUM_NOTES; i++){
+			/* Implement release effect */
+			if(note_released[i]){
+				vol = *(note_vol_array[i]) & 0x00FF;
+				if(5000*(clock() - note_clocks[i])/CLOCKS_PER_SEC >= release_time){
+					note_clocks[i] = clock();
+					if(vol > 0)
+						*(note_vol_array[i]) -= 1;
+					else{
+						*(note_vol_array[i]) = 0;
+						note_used[i] = false;
+						note_released[i] = false;
+					}
+				}
+			}
+			/* Implement decay effect */
 			if(note_used[i]){							//if note is being played
 				vol = *(note_vol_array[i]) & 0x00FF;	//volume is bottom 8 bits
 				if((2000*(clock() - note_clocks[i])/CLOCKS_PER_SEC) >= ms_to_dec){	//if above sustain level, decrement volume
@@ -194,7 +232,6 @@ int main() {
 					}
 				}
 			}
-			//TODO implement release time
 		}
 	}
 }
