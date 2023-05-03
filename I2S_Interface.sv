@@ -7,9 +7,7 @@ This constructs the I2S waveform to communicate
 mono audio. The data_in is copied to both L and R
 channels.
 
-#################
-This will be wired to the SGTL5000 chip via 
-top-level .SV file
+This is wired to the SGTL5000 chip in synthesizer.sv (top-level)
 
 */
 module I2S_interface(
@@ -29,6 +27,29 @@ module I2S_interface(
 			right <= data_in;
 			SDATA <= left[23];
 			left <= {left[22:0], 1'b0};
+		end
+	 end
+	
+	
+endmodule
+
+module small_I2S_interface(
+	input LRCLK, SCLK,
+	input [17:0] data_in,
+	output SDATA );
+	 
+	 logic [17:0] left, right;
+	 
+	 always_ff @(posedge SCLK) begin
+		if(LRCLK) begin
+			left <= data_in[17];
+			SDATA <= right[17];
+			right <= {right[16:0], 1'b0};
+		end
+		else begin
+			right <= data_in;
+			SDATA <= left[17];
+			left <= {left[16:0], 1'b0};
 		end
 	 end
 	

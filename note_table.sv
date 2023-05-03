@@ -1,3 +1,4 @@
+/* Module to determine what note corresponds to a given MIDI frequency value */
 module note_table(input [6:0] MIDI_freq, output [3:0] note_name, octave, partial);
 
 	logic [3:0] note;
