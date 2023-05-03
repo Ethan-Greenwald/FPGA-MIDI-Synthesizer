@@ -1,5 +1,5 @@
 Assembler report for synthesizer
-Mon Apr 17 08:53:18 2023
+Wed May 03 18:33:13 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Apr 17 08:53:18 2023 ;
+; Assembler Status      ; Successful - Wed May 03 18:33:13 2023 ;
 ; Revision Name         ; synthesizer                           ;
 ; Top-level Entity Name ; synthesizer                           ;
 ; Family                ; MAX 10                                ;
@@ -77,8 +77,8 @@ refer to the applicable agreement for further details.
 +----------------+------------------------------------------------------------------------+
 ; Option         ; Setting                                                                ;
 +----------------+------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00C8F76C                                                             ;
-; Checksum       ; 0x00C8F76C                                                             ;
+; JTAG usercode  ; 0x02414878                                                             ;
+; Checksum       ; 0x02414878                                                             ;
 +----------------+------------------------------------------------------------------------+
 
 
@@ -88,15 +88,15 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Apr 17 08:53:13 2023
+    Info: Processing started: Wed May 03 18:33:07 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off final_project -c synthesizer
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4739 megabytes
-    Info: Processing ended: Mon Apr 17 08:53:18 2023
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Wed May 03 18:33:13 2023
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 

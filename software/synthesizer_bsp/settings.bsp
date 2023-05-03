@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Apr 30, 2023 1:49:19 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1682880559428</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 3, 2023 5:17:09 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1683152229416</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\ECE_385\FPGA-MIDI-Synthesizer\software\synthesizer_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\synthesizer_soc.sopcinfo</SopcDesignFile>

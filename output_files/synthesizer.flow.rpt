@@ -1,5 +1,5 @@
 Flow report for synthesizer
-Mon Apr 17 08:53:42 2023
+Wed May 03 18:33:39 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,21 +40,21 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Apr 17 08:53:42 2023       ;
+; Flow Status                        ; Successful - Wed May 03 18:33:13 2023       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; synthesizer                                 ;
 ; Top-level Entity Name              ; synthesizer                                 ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 18,550 / 49,760 ( 37 % )                    ;
-;     Total combinational functions  ; 17,825 / 49,760 ( 36 % )                    ;
-;     Dedicated logic registers      ; 3,206 / 49,760 ( 6 % )                      ;
-; Total registers                    ; 3275                                        ;
+; Total logic elements               ; 37,722 / 49,760 ( 76 % )                    ;
+;     Total combinational functions  ; 34,765 / 49,760 ( 70 % )                    ;
+;     Dedicated logic registers      ; 8,038 / 49,760 ( 16 % )                     ;
+; Total registers                    ; 8107                                        ;
 ; Total pins                         ; 141 / 360 ( 39 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 11,464 / 1,677,312 ( < 1 % )                ;
-; Embedded Multiplier 9-bit elements ; 39 / 288 ( 14 % )                           ;
+; Total memory bits                  ; 797,896 / 1,677,312 ( 48 % )                ;
+; Embedded Multiplier 9-bit elements ; 288 / 288 ( 100 % )                         ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
 ; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/15/2023 16:15:44 ;
+; Start date & time ; 05/03/2023 18:28:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; synthesizer         ;
 +-------------------+---------------------+
@@ -77,17 +77,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------+-------------------------------------------------------------------+---------------+-------------------+----------------+
 ; Assignment Name                     ; Value                                                             ; Default Value ; Entity Name       ; Section Id     ;
 +-------------------------------------+-------------------------------------------------------------------+---------------+-------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 136685079871981.168159334411568                                   ; --            ; --                ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                 ; --            ; --                ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                   ; <None>        ; --                ; --             ;
+; COMPILER_SIGNATURE_ID               ; 136685079871981.168315650501816                                   ; --            ; --                ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; None                                                              ; --            ; --                ; eda_simulation ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                              ; --            ; --                ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                                ; --            ; --                ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                                 ; --            ; --                ; --             ;
-; MISC_FILE                           ; sin_rom_bb.v                                                      ; --            ; --                ; --             ;
-; MISC_FILE                           ; rom_bb.v                                                          ; --            ; --                ; --             ;
-; MISC_FILE                           ; full_sin_rom_bb.v                                                 ; --            ; --                ; --             ;
 ; MISC_FILE                           ; synthesizer_soc/synthesis/../synthesizer_soc.cmp                  ; --            ; --                ; --             ;
 ; MISC_FILE                           ; synthesizer_soc/synthesis/../../synthesizer_soc.qsys              ; --            ; --                ; --             ;
+; MISC_FILE                           ; sine_rom_bb.v                                                     ; --            ; --                ; --             ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                                 ; --            ; --                ; --             ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                                                 ; --            ; --                ; --             ;
 ; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                                                        ; --            ; --                ; --             ;
@@ -103,7 +100,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                      ; --            ; --                ; --             ;
 ; SLD_FILE                            ; synthesizer_soc/synthesis/synthesizer_soc.regmap                  ; --            ; --                ; --             ;
 ; SLD_FILE                            ; synthesizer_soc/synthesis/synthesizer_soc.debuginfo               ; --            ; --                ; --             ;
-; SLD_INFO                            ; QSYS_NAME synthesizer_soc HAS_SOPCINFO 1 GENERATION_ID 1681589624 ; --            ; synthesizer_soc   ; --             ;
+; SLD_INFO                            ; QSYS_NAME synthesizer_soc HAS_SOPCINFO 1 GENERATION_ID 1682793879 ; --            ; synthesizer_soc   ; --             ;
 ; SOPCINFO_FILE                       ; synthesizer_soc/synthesis/../../synthesizer_soc.sopcinfo          ; --            ; --                ; --             ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                                ; --            ; --                ; --             ;
 +-------------------------------------+-------------------------------------------------------------------+---------------+-------------------+----------------+
@@ -114,12 +111,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:59     ; 1.0                     ; 5051 MB             ; 00:01:16                           ;
-; Fitter               ; 1:16:36:08   ; 1.0                     ; 5799 MB             ; 00:02:58                           ;
-; Assembler            ; 00:00:05     ; 1.0                     ; 4739 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:15     ; 2.5                     ; 4975 MB             ; 00:00:32                           ;
-; EDA Netlist Writer   ; 00:00:05     ; 1.0                     ; 4825 MB             ; 00:00:05                           ;
-; Total                ; 1:16:37:32   ; --                      ; --                  ; 00:04:55                           ;
+; Analysis & Synthesis ; 00:02:05     ; 1.0                     ; 5237 MB             ; 00:02:30                           ;
+; Fitter               ; 00:02:19     ; 1.5                     ; 6056 MB             ; 00:05:36                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4808 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:25     ; 2.6                     ; 5120 MB             ; 00:00:59                           ;
+; Total                ; 00:04:55     ; --                      ; --                  ; 00:09:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -132,7 +128,6 @@ refer to the applicable agreement for further details.
 ; Fitter               ; EthanLaptop      ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; EthanLaptop      ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; EthanLaptop      ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; EthanLaptop      ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -143,7 +138,6 @@ quartus_map --read_settings_files=on --write_settings_files=off final_project -c
 quartus_fit --read_settings_files=off --write_settings_files=off final_project -c synthesizer
 quartus_asm --read_settings_files=off --write_settings_files=off final_project -c synthesizer
 quartus_sta final_project -c synthesizer
-quartus_eda --read_settings_files=off --write_settings_files=off final_project -c synthesizer
 
 
 
